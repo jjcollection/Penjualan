@@ -25,16 +25,16 @@ Partial Class MenuUtama
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnKeluar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnJenisBarang = New System.Windows.Forms.Button()
+        Me.btnPembelian = New System.Windows.Forms.Button()
         Me.btnPenjualan = New System.Windows.Forms.Button()
         Me.btnSupplier = New System.Windows.Forms.Button()
         Me.btnBarang = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -46,10 +46,10 @@ Partial Class MenuUtama
                     Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.btnKeluar)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.btnJenisBarang)
+        Me.Panel1.Controls.Add(Me.btnPembelian)
         Me.Panel1.Controls.Add(Me.btnPenjualan)
         Me.Panel1.Controls.Add(Me.btnSupplier)
         Me.Panel1.Controls.Add(Me.btnBarang)
@@ -70,6 +70,63 @@ Partial Class MenuUtama
         Me.Panel2.Size = New System.Drawing.Size(251, 48)
         Me.Panel2.TabIndex = 1
         '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Location = New System.Drawing.Point(286, 13)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(745, 59)
+        Me.Panel3.TabIndex = 9
+        '
+        'Panel4
+        '
+        Me.Panel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Location = New System.Drawing.Point(286, 78)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(745, 640)
+        Me.Panel4.TabIndex = 9
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.LightGray
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Shopping_Cart_64px
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(743, 57)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "APLIKASI PENJUALAN MITRA RAYA"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnKeluar
+        '
+        Me.btnKeluar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnKeluar.FlatAppearance.BorderSize = 0
+        Me.btnKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnKeluar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnKeluar.ForeColor = System.Drawing.Color.White
+        Me.btnKeluar.Image = Global.Penjualan.My.Resources.Resources.Shutdown_32px
+        Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnKeluar.Location = New System.Drawing.Point(7, 311)
+        Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnKeluar.Name = "btnKeluar"
+        Me.btnKeluar.Size = New System.Drawing.Size(251, 47)
+        Me.btnKeluar.TabIndex = 2
+        Me.btnKeluar.Text = "Keluar"
+        Me.btnKeluar.UseVisualStyleBackColor = False
+        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Black
@@ -86,56 +143,39 @@ Partial Class MenuUtama
         Me.Label1.Text = "MENU"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button6
+        'btnJenisBarang
         '
-        Me.Button6.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Image = Global.Penjualan.My.Resources.Resources.Monitor_32px
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(7, 311)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(251, 47)
-        Me.Button6.TabIndex = 0
-        Me.Button6.Text = "Barang"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.btnJenisBarang.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnJenisBarang.FlatAppearance.BorderSize = 0
+        Me.btnJenisBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnJenisBarang.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnJenisBarang.ForeColor = System.Drawing.Color.White
+        Me.btnJenisBarang.Image = Global.Penjualan.My.Resources.Resources.Luggage_Trolley_32px
+        Me.btnJenisBarang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnJenisBarang.Location = New System.Drawing.Point(7, 262)
+        Me.btnJenisBarang.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnJenisBarang.Name = "btnJenisBarang"
+        Me.btnJenisBarang.Size = New System.Drawing.Size(251, 47)
+        Me.btnJenisBarang.TabIndex = 0
+        Me.btnJenisBarang.Text = "Jenis Barang"
+        Me.btnJenisBarang.UseVisualStyleBackColor = False
         '
-        'Button5
+        'btnPembelian
         '
-        Me.Button5.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Image = Global.Penjualan.My.Resources.Resources.Monitor_32px
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(7, 262)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(251, 47)
-        Me.Button5.TabIndex = 0
-        Me.Button5.Text = "Barang"
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Image = Global.Penjualan.My.Resources.Resources.Monitor_32px
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.Location = New System.Drawing.Point(7, 213)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(251, 47)
-        Me.Button4.TabIndex = 0
-        Me.Button4.Text = "Barang"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnPembelian.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnPembelian.FlatAppearance.BorderSize = 0
+        Me.btnPembelian.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPembelian.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPembelian.ForeColor = System.Drawing.Color.White
+        Me.btnPembelian.Image = Global.Penjualan.My.Resources.Resources.Buy_32px
+        Me.btnPembelian.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPembelian.Location = New System.Drawing.Point(7, 213)
+        Me.btnPembelian.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnPembelian.Name = "btnPembelian"
+        Me.btnPembelian.Size = New System.Drawing.Size(251, 47)
+        Me.btnPembelian.TabIndex = 0
+        Me.btnPembelian.Text = "Pembelian"
+        Me.btnPembelian.UseVisualStyleBackColor = False
         '
         'btnPenjualan
         '
@@ -188,46 +228,6 @@ Partial Class MenuUtama
         Me.btnBarang.Text = "Barang"
         Me.btnBarang.UseVisualStyleBackColor = False
         '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Location = New System.Drawing.Point(286, 13)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(745, 59)
-        Me.Panel3.TabIndex = 9
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.LightGray
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Shopping_Cart_64px
-        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(743, 57)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "APLIKASI PENJUALAN MITRA RAYA"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Panel4
-        '
-        Me.Panel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Location = New System.Drawing.Point(286, 78)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(745, 640)
-        Me.Panel4.TabIndex = 9
-        '
         'MenuUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -254,13 +254,13 @@ Partial Class MenuUtama
     Friend WithEvents btnBarang As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button6 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents btnJenisBarang As System.Windows.Forms.Button
+    Friend WithEvents btnPembelian As System.Windows.Forms.Button
     Friend WithEvents btnPenjualan As System.Windows.Forms.Button
     Friend WithEvents btnSupplier As System.Windows.Forms.Button
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents btnKeluar As System.Windows.Forms.Button
 
 End Class

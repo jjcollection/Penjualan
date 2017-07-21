@@ -699,6 +699,30 @@ ORDER BY PenjualanMaster.noTransaksi DESC</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gridBarangTableAdapter" GeneratorDataComponentClassName="gridBarangTableAdapter" Name="gridBarang" UserDataComponentName="gridBarangTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="penjualanConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Barang.kodeBarang, Barang.idJenis, Barang.namaBarang, Barang.harga, Barang.satuan, Barang.stok, Jenis.namaJenis
+FROM            (Barang INNER JOIN
+                         Jenis ON Barang.idJenis = Jenis.idJenis)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="kodeBarang" DataSetColumn="kodeBarang" />
+              <Mapping SourceColumn="idJenis" DataSetColumn="idJenis" />
+              <Mapping SourceColumn="namaBarang" DataSetColumn="namaBarang" />
+              <Mapping SourceColumn="harga" DataSetColumn="harga" />
+              <Mapping SourceColumn="satuan" DataSetColumn="satuan" />
+              <Mapping SourceColumn="stok" DataSetColumn="stok" />
+              <Mapping SourceColumn="namaJenis" DataSetColumn="namaJenis" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -896,6 +920,43 @@ ORDER BY PenjualanMaster.noTransaksi DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="gridBarang" msprop:Generator_TableClassName="gridBarangDataTable" msprop:Generator_TableVarName="tablegridBarang" msprop:Generator_TablePropName="gridBarang" msprop:Generator_RowDeletingName="gridBarangRowDeleting" msprop:Generator_RowChangingName="gridBarangRowChanging" msprop:Generator_RowEvHandlerName="gridBarangRowChangeEventHandler" msprop:Generator_RowDeletedName="gridBarangRowDeleted" msprop:Generator_UserTableName="gridBarang" msprop:Generator_RowChangedName="gridBarangRowChanged" msprop:Generator_RowEvArgName="gridBarangRowChangeEvent" msprop:Generator_RowClassName="gridBarangRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="kodeBarang" msprop:Generator_ColumnVarNameInTable="columnkodeBarang" msprop:Generator_ColumnPropNameInRow="kodeBarang" msprop:Generator_ColumnPropNameInTable="kodeBarangColumn" msprop:Generator_UserColumnName="kodeBarang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idJenis" msprop:Generator_ColumnVarNameInTable="columnidJenis" msprop:Generator_ColumnPropNameInRow="idJenis" msprop:Generator_ColumnPropNameInTable="idJenisColumn" msprop:Generator_UserColumnName="idJenis" type="xs:int" minOccurs="0" />
+              <xs:element name="namaBarang" msprop:Generator_ColumnVarNameInTable="columnnamaBarang" msprop:Generator_ColumnPropNameInRow="namaBarang" msprop:Generator_ColumnPropNameInTable="namaBarangColumn" msprop:Generator_UserColumnName="namaBarang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harga" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_UserColumnName="harga" type="xs:decimal" minOccurs="0" />
+              <xs:element name="satuan" msprop:Generator_ColumnVarNameInTable="columnsatuan" msprop:Generator_ColumnPropNameInRow="satuan" msprop:Generator_ColumnPropNameInTable="satuanColumn" msprop:Generator_UserColumnName="satuan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="stok" msprop:Generator_ColumnVarNameInTable="columnstok" msprop:Generator_ColumnPropNameInRow="stok" msprop:Generator_ColumnPropNameInTable="stokColumn" msprop:Generator_UserColumnName="stok" type="xs:int" minOccurs="0" />
+              <xs:element name="namaJenis" msprop:Generator_ColumnVarNameInTable="columnnamaJenis" msprop:Generator_ColumnPropNameInRow="namaJenis" msprop:Generator_ColumnPropNameInTable="namaJenisColumn" msprop:Generator_UserColumnName="namaJenis" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -937,6 +998,9 @@ ORDER BY PenjualanMaster.noTransaksi DESC</CommandText>
       <msdata:Relationship name="PenjualanMasterPenjualanDetil" msdata:parent="PenjualanMaster" msdata:child="PenjualanDetil" msdata:parentkey="noTransaksi" msdata:childkey="noTransaksi" msprop:Generator_UserChildTable="PenjualanDetil" msprop:Generator_ChildPropName="GetPenjualanDetilRows" msprop:Generator_UserRelationName="PenjualanMasterPenjualanDetil" msprop:Generator_RelationVarName="relationPenjualanMasterPenjualanDetil" msprop:Generator_UserParentTable="PenjualanMaster" msprop:Generator_ParentPropName="PenjualanMasterRow" />
       <msdata:Relationship name="BarangPembelianDetil1" msdata:parent="gridPenjualan" msdata:child="PembelianDetil" msdata:parentkey="kodeBarang" msdata:childkey="kodeBarang" msprop:Generator_UserChildTable="PembelianDetil" msprop:Generator_ChildPropName="GetPembelianDetilRows" msprop:Generator_UserRelationName="BarangPembelianDetil1" msprop:Generator_ParentPropName="gridPenjualanRow" msprop:Generator_RelationVarName="relationBarangPembelianDetil1" msprop:Generator_UserParentTable="gridPenjualan" />
       <msdata:Relationship name="BarangPenjualanDetil1" msdata:parent="gridPenjualan" msdata:child="PenjualanDetil" msdata:parentkey="kodeBarang" msdata:childkey="kodeBarang" msprop:Generator_UserChildTable="PenjualanDetil" msprop:Generator_ChildPropName="GetPenjualanDetilRows" msprop:Generator_UserRelationName="BarangPenjualanDetil1" msprop:Generator_ParentPropName="gridPenjualanRow" msprop:Generator_RelationVarName="relationBarangPenjualanDetil1" msprop:Generator_UserParentTable="gridPenjualan" />
+      <msdata:Relationship name="BarangPembelianDetil2" msdata:parent="gridBarang" msdata:child="PembelianDetil" msdata:parentkey="kodeBarang" msdata:childkey="kodeBarang" msprop:Generator_UserChildTable="PembelianDetil" msprop:Generator_ChildPropName="GetPembelianDetilRows" msprop:Generator_UserRelationName="BarangPembelianDetil2" msprop:Generator_RelationVarName="relationBarangPembelianDetil2" msprop:Generator_UserParentTable="gridBarang" msprop:Generator_ParentPropName="gridBarangRow" />
+      <msdata:Relationship name="BarangPenjualanDetil2" msdata:parent="gridBarang" msdata:child="PenjualanDetil" msdata:parentkey="kodeBarang" msdata:childkey="kodeBarang" msprop:Generator_UserChildTable="PenjualanDetil" msprop:Generator_ChildPropName="GetPenjualanDetilRows" msprop:Generator_UserRelationName="BarangPenjualanDetil2" msprop:Generator_RelationVarName="relationBarangPenjualanDetil2" msprop:Generator_UserParentTable="gridBarang" msprop:Generator_ParentPropName="gridBarangRow" />
+      <msdata:Relationship name="JenisBarang1" msdata:parent="Jenis" msdata:child="gridBarang" msdata:parentkey="idJenis" msdata:childkey="idJenis" msprop:Generator_UserChildTable="gridBarang" msprop:Generator_ChildPropName="GetgridBarangRows" msprop:Generator_UserRelationName="JenisBarang1" msprop:Generator_ParentPropName="JenisRow" msprop:Generator_RelationVarName="relationJenisBarang1" msprop:Generator_UserParentTable="Jenis" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

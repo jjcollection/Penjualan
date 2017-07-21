@@ -38,41 +38,43 @@ Partial Class FormBarang
         Dim Label10 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
-        Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
-        Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
-        Me.BarangDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.KodeBarangTextBox = New System.Windows.Forms.TextBox()
-        Me.NamaBarangTextBox = New System.Windows.Forms.TextBox()
-        Me.HargaTextBox = New System.Windows.Forms.TextBox()
-        Me.IdJenisComboBox = New System.Windows.Forms.ComboBox()
-        Me.SatuanComboBox = New System.Windows.Forms.ComboBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtCari = New System.Windows.Forms.TextBox()
-        Me.cbbKriteria = New System.Windows.Forms.ComboBox()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnUbah = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCari = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.cbbKriteria = New System.Windows.Forms.ComboBox()
+        Me.SatuanComboBox = New System.Windows.Forms.ComboBox()
+        Me.IdJenisComboBox = New System.Windows.Forms.ComboBox()
         Me.JenisBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
+        Me.KodeBarangTextBox = New System.Windows.Forms.TextBox()
+        Me.NamaBarangTextBox = New System.Windows.Forms.TextBox()
+        Me.HargaTextBox = New System.Windows.Forms.TextBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.BarangDataGridView = New System.Windows.Forms.DataGridView()
+        Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
+        Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
         Me.JenisTableAdapter = New Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter()
+        Me.GridBarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GridBarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter()
+        Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaJenisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SatuanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StokDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         KodeBarangLabel = New System.Windows.Forms.Label()
         IdJenisLabel = New System.Windows.Forms.Label()
         NamaBarangLabel = New System.Windows.Forms.Label()
@@ -91,149 +93,15 @@ Partial Class FormBarang
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.JenisBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridBarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel3
-        '
-        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Location = New System.Drawing.Point(279, 6)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(877, 59)
-        Me.Panel3.TabIndex = 14
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.btnKeluar)
-        Me.Panel1.Controls.Add(Me.btnSimpan)
-        Me.Panel1.Controls.Add(Me.btnHapus)
-        Me.Panel1.Controls.Add(Me.btnUbah)
-        Me.Panel1.Controls.Add(Me.btnTambah)
-        Me.Panel1.ForeColor = System.Drawing.Color.Black
-        Me.Panel1.Location = New System.Drawing.Point(3, 6)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(269, 730)
-        Me.Panel1.TabIndex = 13
-        '
-        'Panel2
-        '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(7, 8)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(251, 48)
-        Me.Panel2.TabIndex = 1
-        '
-        'Panel4
-        '
-        Me.Panel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.Panel6)
-        Me.Panel4.Controls.Add(Me.Panel5)
-        Me.Panel4.Location = New System.Drawing.Point(279, 68)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(868, 675)
-        Me.Panel4.TabIndex = 15
-        '
-        'PenjualanDataSet
-        '
-        Me.PenjualanDataSet.DataSetName = "penjualanDataSet"
-        Me.PenjualanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BarangBindingSource
-        '
-        Me.BarangBindingSource.DataMember = "Barang"
-        Me.BarangBindingSource.DataSource = Me.PenjualanDataSet
-        '
-        'BarangTableAdapter
-        '
-        Me.BarangTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BarangTableAdapter = Me.BarangTableAdapter
-        Me.TableAdapterManager.JenisTableAdapter = Me.JenisTableAdapter
-        Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
-        Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
-        Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
-        Me.TableAdapterManager.PenjualanMasterTableAdapter = Nothing
-        Me.TableAdapterManager.SupplierTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = Penjualan.penjualanDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'BarangDataGridView
-        '
-        Me.BarangDataGridView.AllowUserToAddRows = False
-        Me.BarangDataGridView.AllowUserToDeleteRows = False
-        Me.BarangDataGridView.AutoGenerateColumns = False
-        Me.BarangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BarangDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
-        Me.BarangDataGridView.DataSource = Me.BarangBindingSource
-        Me.BarangDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BarangDataGridView.Location = New System.Drawing.Point(0, 0)
-        Me.BarangDataGridView.Name = "BarangDataGridView"
-        Me.BarangDataGridView.ReadOnly = True
-        Me.BarangDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.BarangDataGridView.Size = New System.Drawing.Size(856, 446)
-        Me.BarangDataGridView.TabIndex = 10
-        '
-        'Panel5
-        '
-        Me.Panel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel5.Controls.Add(Me.BarangDataGridView)
-        Me.Panel5.Location = New System.Drawing.Point(3, 217)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(860, 450)
-        Me.Panel5.TabIndex = 11
-        '
-        'Panel6
-        '
-        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel6.Controls.Add(Me.GroupBox1)
-        Me.Panel6.Controls.Add(Me.SatuanComboBox)
-        Me.Panel6.Controls.Add(Me.IdJenisComboBox)
-        Me.Panel6.Controls.Add(Label8)
-        Me.Panel6.Controls.Add(KodeBarangLabel)
-        Me.Panel6.Controls.Add(Label7)
-        Me.Panel6.Controls.Add(Me.KodeBarangTextBox)
-        Me.Panel6.Controls.Add(IdJenisLabel)
-        Me.Panel6.Controls.Add(Label6)
-        Me.Panel6.Controls.Add(NamaBarangLabel)
-        Me.Panel6.Controls.Add(Label5)
-        Me.Panel6.Controls.Add(Me.NamaBarangTextBox)
-        Me.Panel6.Controls.Add(HargaLabel)
-        Me.Panel6.Controls.Add(Label4)
-        Me.Panel6.Controls.Add(Me.HargaTextBox)
-        Me.Panel6.Controls.Add(SatuanLabel)
-        Me.Panel6.Location = New System.Drawing.Point(3, 3)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(860, 208)
-        Me.Panel6.TabIndex = 11
         '
         'KodeBarangLabel
         '
@@ -244,13 +112,6 @@ Partial Class FormBarang
         KodeBarangLabel.Size = New System.Drawing.Size(107, 21)
         KodeBarangLabel.TabIndex = 0
         KodeBarangLabel.Text = "Kode Barang"
-        '
-        'KodeBarangTextBox
-        '
-        Me.KodeBarangTextBox.Location = New System.Drawing.Point(154, 21)
-        Me.KodeBarangTextBox.Name = "KodeBarangTextBox"
-        Me.KodeBarangTextBox.Size = New System.Drawing.Size(298, 29)
-        Me.KodeBarangTextBox.TabIndex = 1
         '
         'IdJenisLabel
         '
@@ -272,15 +133,6 @@ Partial Class FormBarang
         NamaBarangLabel.TabIndex = 4
         NamaBarangLabel.Text = "Nama Barang"
         '
-        'NamaBarangTextBox
-        '
-        Me.NamaBarangTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NamaBarangTextBox.Location = New System.Drawing.Point(154, 91)
-        Me.NamaBarangTextBox.Name = "NamaBarangTextBox"
-        Me.NamaBarangTextBox.Size = New System.Drawing.Size(298, 29)
-        Me.NamaBarangTextBox.TabIndex = 5
-        '
         'HargaLabel
         '
         HargaLabel.AutoSize = True
@@ -290,13 +142,6 @@ Partial Class FormBarang
         HargaLabel.Size = New System.Drawing.Size(56, 21)
         HargaLabel.TabIndex = 6
         HargaLabel.Text = "Harga"
-        '
-        'HargaTextBox
-        '
-        Me.HargaTextBox.Location = New System.Drawing.Point(154, 126)
-        Me.HargaTextBox.Name = "HargaTextBox"
-        Me.HargaTextBox.Size = New System.Drawing.Size(298, 29)
-        Me.HargaTextBox.TabIndex = 7
         '
         'SatuanLabel
         '
@@ -358,64 +203,6 @@ Partial Class FormBarang
         Label8.TabIndex = 0
         Label8.Text = ":"
         '
-        'IdJenisComboBox
-        '
-        Me.IdJenisComboBox.DataSource = Me.JenisBindingSource
-        Me.IdJenisComboBox.DisplayMember = "idJenis"
-        Me.IdJenisComboBox.FormattingEnabled = True
-        Me.IdJenisComboBox.Location = New System.Drawing.Point(154, 56)
-        Me.IdJenisComboBox.Name = "IdJenisComboBox"
-        Me.IdJenisComboBox.Size = New System.Drawing.Size(298, 29)
-        Me.IdJenisComboBox.TabIndex = 15
-        Me.IdJenisComboBox.ValueMember = "namaJenis"
-        '
-        'SatuanComboBox
-        '
-        Me.SatuanComboBox.FormattingEnabled = True
-        Me.SatuanComboBox.Items.AddRange(New Object() {"PCS", "BOX", "DUS"})
-        Me.SatuanComboBox.Location = New System.Drawing.Point(154, 161)
-        Me.SatuanComboBox.Name = "SatuanComboBox"
-        Me.SatuanComboBox.Size = New System.Drawing.Size(148, 29)
-        Me.SatuanComboBox.TabIndex = 16
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.txtCari)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.cbbKriteria)
-        Me.GroupBox1.Controls.Add(Label11)
-        Me.GroupBox1.Controls.Add(Label3)
-        Me.GroupBox1.Controls.Add(Label10)
-        Me.GroupBox1.Controls.Add(Label9)
-        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(459, 16)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(386, 169)
-        Me.GroupBox1.TabIndex = 17
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Pencarian"
-        '
-        'txtCari
-        '
-        Me.txtCari.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtCari.Location = New System.Drawing.Point(104, 84)
-        Me.txtCari.Name = "txtCari"
-        Me.txtCari.Size = New System.Drawing.Size(264, 29)
-        Me.txtCari.TabIndex = 1
-        '
-        'cbbKriteria
-        '
-        Me.cbbKriteria.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cbbKriteria.FormattingEnabled = True
-        Me.cbbKriteria.Location = New System.Drawing.Point(104, 43)
-        Me.cbbKriteria.Name = "cbbKriteria"
-        Me.cbbKriteria.Size = New System.Drawing.Size(264, 29)
-        Me.cbbKriteria.TabIndex = 15
-        '
         'Label3
         '
         Label3.AutoSize = True
@@ -446,52 +233,6 @@ Partial Class FormBarang
         Label10.TabIndex = 2
         Label10.Text = ":"
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "kodeBarang"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Kode Barang"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 180
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "idJenis"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Jenis"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 150
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "namaBarang"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Nama Barang"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 250
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "harga"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Harga"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 180
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "satuan"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Satuan"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "stok"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Stok"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
         'Label11
         '
         Label11.AutoSize = True
@@ -501,6 +242,18 @@ Partial Class FormBarang
         Label11.Size = New System.Drawing.Size(52, 21)
         Label11.TabIndex = 2
         Label11.Text = "Jenis "
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Location = New System.Drawing.Point(279, 6)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(877, 59)
+        Me.Panel3.TabIndex = 14
         '
         'Label2
         '
@@ -517,6 +270,35 @@ Partial Class FormBarang
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "APLIKASI PENJUALAN MITRA RAYA"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.btnKeluar)
+        Me.Panel1.Controls.Add(Me.btnSimpan)
+        Me.Panel1.Controls.Add(Me.btnHapus)
+        Me.Panel1.Controls.Add(Me.btnUbah)
+        Me.Panel1.Controls.Add(Me.btnTambah)
+        Me.Panel1.ForeColor = System.Drawing.Color.Black
+        Me.Panel1.Location = New System.Drawing.Point(3, 6)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(269, 730)
+        Me.Panel1.TabIndex = 13
+        '
+        'Panel2
+        '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Location = New System.Drawing.Point(7, 8)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(251, 48)
+        Me.Panel2.TabIndex = 1
         '
         'Label1
         '
@@ -619,6 +401,74 @@ Partial Class FormBarang
         Me.btnTambah.Text = "Tambah"
         Me.btnTambah.UseVisualStyleBackColor = False
         '
+        'Panel4
+        '
+        Me.Panel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.Panel6)
+        Me.Panel4.Controls.Add(Me.Panel5)
+        Me.Panel4.Location = New System.Drawing.Point(279, 68)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(868, 675)
+        Me.Panel4.TabIndex = 15
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel6.Controls.Add(Me.GroupBox1)
+        Me.Panel6.Controls.Add(Me.SatuanComboBox)
+        Me.Panel6.Controls.Add(Me.IdJenisComboBox)
+        Me.Panel6.Controls.Add(Label8)
+        Me.Panel6.Controls.Add(KodeBarangLabel)
+        Me.Panel6.Controls.Add(Label7)
+        Me.Panel6.Controls.Add(Me.KodeBarangTextBox)
+        Me.Panel6.Controls.Add(IdJenisLabel)
+        Me.Panel6.Controls.Add(Label6)
+        Me.Panel6.Controls.Add(NamaBarangLabel)
+        Me.Panel6.Controls.Add(Label5)
+        Me.Panel6.Controls.Add(Me.NamaBarangTextBox)
+        Me.Panel6.Controls.Add(HargaLabel)
+        Me.Panel6.Controls.Add(Label4)
+        Me.Panel6.Controls.Add(Me.HargaTextBox)
+        Me.Panel6.Controls.Add(SatuanLabel)
+        Me.Panel6.Location = New System.Drawing.Point(3, 3)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(860, 208)
+        Me.Panel6.TabIndex = 11
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.txtCari)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.cbbKriteria)
+        Me.GroupBox1.Controls.Add(Label11)
+        Me.GroupBox1.Controls.Add(Label3)
+        Me.GroupBox1.Controls.Add(Label10)
+        Me.GroupBox1.Controls.Add(Label9)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(459, 16)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(386, 169)
+        Me.GroupBox1.TabIndex = 17
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Pencarian"
+        '
+        'txtCari
+        '
+        Me.txtCari.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtCari.Location = New System.Drawing.Point(104, 84)
+        Me.txtCari.Name = "txtCari"
+        Me.txtCari.Size = New System.Drawing.Size(264, 29)
+        Me.txtCari.TabIndex = 1
+        '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -655,14 +505,176 @@ Partial Class FormBarang
         Me.Button1.Text = "Reset"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'cbbKriteria
+        '
+        Me.cbbKriteria.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbbKriteria.FormattingEnabled = True
+        Me.cbbKriteria.Location = New System.Drawing.Point(104, 43)
+        Me.cbbKriteria.Name = "cbbKriteria"
+        Me.cbbKriteria.Size = New System.Drawing.Size(264, 29)
+        Me.cbbKriteria.TabIndex = 15
+        '
+        'SatuanComboBox
+        '
+        Me.SatuanComboBox.FormattingEnabled = True
+        Me.SatuanComboBox.Items.AddRange(New Object() {"PCS", "BOX", "DUS"})
+        Me.SatuanComboBox.Location = New System.Drawing.Point(154, 161)
+        Me.SatuanComboBox.Name = "SatuanComboBox"
+        Me.SatuanComboBox.Size = New System.Drawing.Size(148, 29)
+        Me.SatuanComboBox.TabIndex = 16
+        '
+        'IdJenisComboBox
+        '
+        Me.IdJenisComboBox.DataSource = Me.JenisBindingSource
+        Me.IdJenisComboBox.DisplayMember = "namaJenis"
+        Me.IdJenisComboBox.FormattingEnabled = True
+        Me.IdJenisComboBox.Location = New System.Drawing.Point(154, 56)
+        Me.IdJenisComboBox.Name = "IdJenisComboBox"
+        Me.IdJenisComboBox.Size = New System.Drawing.Size(298, 29)
+        Me.IdJenisComboBox.TabIndex = 15
+        Me.IdJenisComboBox.ValueMember = "idJenis"
+        '
         'JenisBindingSource
         '
         Me.JenisBindingSource.DataMember = "Jenis"
         Me.JenisBindingSource.DataSource = Me.PenjualanDataSet
         '
+        'PenjualanDataSet
+        '
+        Me.PenjualanDataSet.DataSetName = "penjualanDataSet"
+        Me.PenjualanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'KodeBarangTextBox
+        '
+        Me.KodeBarangTextBox.Location = New System.Drawing.Point(154, 21)
+        Me.KodeBarangTextBox.Name = "KodeBarangTextBox"
+        Me.KodeBarangTextBox.Size = New System.Drawing.Size(298, 29)
+        Me.KodeBarangTextBox.TabIndex = 1
+        '
+        'NamaBarangTextBox
+        '
+        Me.NamaBarangTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NamaBarangTextBox.Location = New System.Drawing.Point(154, 91)
+        Me.NamaBarangTextBox.Name = "NamaBarangTextBox"
+        Me.NamaBarangTextBox.Size = New System.Drawing.Size(298, 29)
+        Me.NamaBarangTextBox.TabIndex = 5
+        '
+        'HargaTextBox
+        '
+        Me.HargaTextBox.Location = New System.Drawing.Point(154, 126)
+        Me.HargaTextBox.Name = "HargaTextBox"
+        Me.HargaTextBox.Size = New System.Drawing.Size(298, 29)
+        Me.HargaTextBox.TabIndex = 7
+        '
+        'Panel5
+        '
+        Me.Panel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel5.Controls.Add(Me.BarangDataGridView)
+        Me.Panel5.Location = New System.Drawing.Point(3, 217)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(860, 450)
+        Me.Panel5.TabIndex = 11
+        '
+        'BarangDataGridView
+        '
+        Me.BarangDataGridView.AllowUserToAddRows = False
+        Me.BarangDataGridView.AllowUserToDeleteRows = False
+        Me.BarangDataGridView.AutoGenerateColumns = False
+        Me.BarangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BarangDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KodeBarangDataGridViewTextBoxColumn, Me.NamaBarangDataGridViewTextBoxColumn, Me.NamaJenisDataGridViewTextBoxColumn, Me.HargaDataGridViewTextBoxColumn, Me.SatuanDataGridViewTextBoxColumn, Me.StokDataGridViewTextBoxColumn})
+        Me.BarangDataGridView.DataSource = Me.GridBarangBindingSource
+        Me.BarangDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.BarangDataGridView.Location = New System.Drawing.Point(0, 0)
+        Me.BarangDataGridView.Name = "BarangDataGridView"
+        Me.BarangDataGridView.ReadOnly = True
+        Me.BarangDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.BarangDataGridView.Size = New System.Drawing.Size(856, 446)
+        Me.BarangDataGridView.TabIndex = 10
+        '
+        'BarangBindingSource
+        '
+        Me.BarangBindingSource.DataMember = "Barang"
+        Me.BarangBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'BarangTableAdapter
+        '
+        Me.BarangTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BarangTableAdapter = Me.BarangTableAdapter
+        Me.TableAdapterManager.JenisTableAdapter = Me.JenisTableAdapter
+        Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
+        Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
+        Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
+        Me.TableAdapterManager.PenjualanMasterTableAdapter = Nothing
+        Me.TableAdapterManager.SupplierTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Penjualan.penjualanDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'JenisTableAdapter
         '
         Me.JenisTableAdapter.ClearBeforeFill = True
+        '
+        'GridBarangBindingSource
+        '
+        Me.GridBarangBindingSource.DataMember = "gridBarang"
+        Me.GridBarangBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'GridBarangTableAdapter
+        '
+        Me.GridBarangTableAdapter.ClearBeforeFill = True
+        '
+        'KodeBarangDataGridViewTextBoxColumn
+        '
+        Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
+        Me.KodeBarangDataGridViewTextBoxColumn.HeaderText = "Kode Barang"
+        Me.KodeBarangDataGridViewTextBoxColumn.Name = "KodeBarangDataGridViewTextBoxColumn"
+        Me.KodeBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.KodeBarangDataGridViewTextBoxColumn.Width = 180
+        '
+        'NamaBarangDataGridViewTextBoxColumn
+        '
+        Me.NamaBarangDataGridViewTextBoxColumn.DataPropertyName = "namaBarang"
+        Me.NamaBarangDataGridViewTextBoxColumn.HeaderText = "Nama Barang"
+        Me.NamaBarangDataGridViewTextBoxColumn.Name = "NamaBarangDataGridViewTextBoxColumn"
+        Me.NamaBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NamaBarangDataGridViewTextBoxColumn.Width = 250
+        '
+        'NamaJenisDataGridViewTextBoxColumn
+        '
+        Me.NamaJenisDataGridViewTextBoxColumn.DataPropertyName = "namaJenis"
+        Me.NamaJenisDataGridViewTextBoxColumn.HeaderText = "Jenis"
+        Me.NamaJenisDataGridViewTextBoxColumn.Name = "NamaJenisDataGridViewTextBoxColumn"
+        Me.NamaJenisDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HargaDataGridViewTextBoxColumn
+        '
+        Me.HargaDataGridViewTextBoxColumn.DataPropertyName = "harga"
+        Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga"
+        Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
+        Me.HargaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.HargaDataGridViewTextBoxColumn.Width = 180
+        '
+        'SatuanDataGridViewTextBoxColumn
+        '
+        Me.SatuanDataGridViewTextBoxColumn.DataPropertyName = "satuan"
+        Me.SatuanDataGridViewTextBoxColumn.HeaderText = "Satuan"
+        Me.SatuanDataGridViewTextBoxColumn.Name = "SatuanDataGridViewTextBoxColumn"
+        Me.SatuanDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SatuanDataGridViewTextBoxColumn.Width = 180
+        '
+        'StokDataGridViewTextBoxColumn
+        '
+        Me.StokDataGridViewTextBoxColumn.DataPropertyName = "stok"
+        Me.StokDataGridViewTextBoxColumn.HeaderText = "Stok"
+        Me.StokDataGridViewTextBoxColumn.Name = "StokDataGridViewTextBoxColumn"
+        Me.StokDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormBarang
         '
@@ -682,15 +694,16 @@ Partial Class FormBarang
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
-        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.JenisBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridBarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -720,15 +733,17 @@ Partial Class FormBarang
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents txtCari As System.Windows.Forms.TextBox
     Friend WithEvents cbbKriteria As System.Windows.Forms.ComboBox
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents JenisTableAdapter As Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter
     Friend WithEvents JenisBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GridBarangBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents GridBarangTableAdapter As Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter
+    Friend WithEvents KodeBarangDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NamaBarangDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NamaJenisDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents HargaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SatuanDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents StokDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
