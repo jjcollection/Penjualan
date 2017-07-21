@@ -17,7 +17,7 @@
 
     End Sub
 
-    Private Sub IdJenisComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IdJenisComboBox.SelectedIndexChanged, ComboBox1.SelectedIndexChanged
+    Private Sub IdJenisComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IdJenisComboBox.SelectedIndexChanged, cbbKriteria.SelectedIndexChanged
 
     End Sub
 End Class

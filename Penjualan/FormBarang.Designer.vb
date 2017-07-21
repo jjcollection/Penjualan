@@ -37,16 +37,9 @@ Partial Class FormBarang
         Dim Label9 As System.Windows.Forms.Label
         Dim Label10 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnKeluar = New System.Windows.Forms.Button()
-        Me.btnSimpan = New System.Windows.Forms.Button()
-        Me.btnHapus = New System.Windows.Forms.Button()
-        Me.btnUbah = New System.Windows.Forms.Button()
-        Me.btnTambah = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
         Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -61,14 +54,23 @@ Partial Class FormBarang
         Me.IdJenisComboBox = New System.Windows.Forms.ComboBox()
         Me.SatuanComboBox = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.txtCari = New System.Windows.Forms.TextBox()
+        Me.cbbKriteria = New System.Windows.Forms.ComboBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnKeluar = New System.Windows.Forms.Button()
+        Me.btnSimpan = New System.Windows.Forms.Button()
+        Me.btnHapus = New System.Windows.Forms.Button()
+        Me.btnUbah = New System.Windows.Forms.Button()
+        Me.btnTambah = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         KodeBarangLabel = New System.Windows.Forms.Label()
         IdJenisLabel = New System.Windows.Forms.Label()
         NamaBarangLabel = New System.Windows.Forms.Label()
@@ -94,22 +96,6 @@ Partial Class FormBarang
         Me.Panel6.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Shopping_Cart_64px
-        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(875, 57)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "APLIKASI PENJUALAN MITRA RAYA"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel3
         '
@@ -151,107 +137,6 @@ Partial Class FormBarang
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(251, 48)
         Me.Panel2.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.Black
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Image = Global.Penjualan.My.Resources.Resources.Menu_White
-        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(249, 46)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "MENU"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnKeluar
-        '
-        Me.btnKeluar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnKeluar.FlatAppearance.BorderSize = 0
-        Me.btnKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnKeluar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKeluar.ForeColor = System.Drawing.Color.White
-        Me.btnKeluar.Image = Global.Penjualan.My.Resources.Resources.Shutdown_32px
-        Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnKeluar.Location = New System.Drawing.Point(8, 268)
-        Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnKeluar.Name = "btnKeluar"
-        Me.btnKeluar.Size = New System.Drawing.Size(251, 47)
-        Me.btnKeluar.TabIndex = 0
-        Me.btnKeluar.Text = "Keluar"
-        Me.btnKeluar.UseVisualStyleBackColor = False
-        '
-        'btnSimpan
-        '
-        Me.btnSimpan.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnSimpan.FlatAppearance.BorderSize = 0
-        Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSimpan.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSimpan.ForeColor = System.Drawing.Color.White
-        Me.btnSimpan.Image = Global.Penjualan.My.Resources.Resources.Save_32px
-        Me.btnSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSimpan.Location = New System.Drawing.Point(8, 112)
-        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnSimpan.Name = "btnSimpan"
-        Me.btnSimpan.Size = New System.Drawing.Size(251, 47)
-        Me.btnSimpan.TabIndex = 0
-        Me.btnSimpan.Text = "Simpan"
-        Me.btnSimpan.UseVisualStyleBackColor = False
-        '
-        'btnHapus
-        '
-        Me.btnHapus.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnHapus.FlatAppearance.BorderSize = 0
-        Me.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHapus.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHapus.ForeColor = System.Drawing.Color.White
-        Me.btnHapus.Image = Global.Penjualan.My.Resources.Resources.Trash_Can_32px
-        Me.btnHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHapus.Location = New System.Drawing.Point(8, 216)
-        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(251, 47)
-        Me.btnHapus.TabIndex = 0
-        Me.btnHapus.Text = "Hapus"
-        Me.btnHapus.UseVisualStyleBackColor = False
-        '
-        'btnUbah
-        '
-        Me.btnUbah.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnUbah.FlatAppearance.BorderSize = 0
-        Me.btnUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUbah.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUbah.ForeColor = System.Drawing.Color.White
-        Me.btnUbah.Image = Global.Penjualan.My.Resources.Resources.Edit_32px
-        Me.btnUbah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUbah.Location = New System.Drawing.Point(8, 164)
-        Me.btnUbah.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnUbah.Name = "btnUbah"
-        Me.btnUbah.Size = New System.Drawing.Size(251, 47)
-        Me.btnUbah.TabIndex = 0
-        Me.btnUbah.Text = "Ubah"
-        Me.btnUbah.UseVisualStyleBackColor = False
-        '
-        'btnTambah
-        '
-        Me.btnTambah.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnTambah.FlatAppearance.BorderSize = 0
-        Me.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTambah.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTambah.ForeColor = System.Drawing.Color.White
-        Me.btnTambah.Image = Global.Penjualan.My.Resources.Resources.Plus_Math_32px
-        Me.btnTambah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTambah.Location = New System.Drawing.Point(8, 60)
-        Me.btnTambah.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(251, 47)
-        Me.btnTambah.TabIndex = 0
-        Me.btnTambah.Text = "Tambah"
-        Me.btnTambah.UseVisualStyleBackColor = False
         '
         'Panel4
         '
@@ -305,6 +190,7 @@ Partial Class FormBarang
         Me.BarangDataGridView.Location = New System.Drawing.Point(0, 0)
         Me.BarangDataGridView.Name = "BarangDataGridView"
         Me.BarangDataGridView.ReadOnly = True
+        Me.BarangDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.BarangDataGridView.Size = New System.Drawing.Size(856, 446)
         Me.BarangDataGridView.TabIndex = 10
         '
@@ -322,6 +208,8 @@ Partial Class FormBarang
         '
         'Panel6
         '
+        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel6.Controls.Add(Me.GroupBox1)
         Me.Panel6.Controls.Add(Me.SatuanComboBox)
@@ -490,8 +378,10 @@ Partial Class FormBarang
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.txtCari)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.cbbKriteria)
         Me.GroupBox1.Controls.Add(Label11)
         Me.GroupBox1.Controls.Add(Label3)
         Me.GroupBox1.Controls.Add(Label10)
@@ -504,24 +394,24 @@ Partial Class FormBarang
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pencarian"
         '
-        'TextBox1
+        'txtCari
         '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.txtCari.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(104, 84)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(264, 29)
-        Me.TextBox1.TabIndex = 1
+        Me.txtCari.Location = New System.Drawing.Point(104, 84)
+        Me.txtCari.Name = "txtCari"
+        Me.txtCari.Size = New System.Drawing.Size(264, 29)
+        Me.txtCari.TabIndex = 1
         '
-        'ComboBox1
+        'cbbKriteria
         '
-        Me.ComboBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.cbbKriteria.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(104, 43)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(264, 29)
-        Me.ComboBox1.TabIndex = 15
+        Me.cbbKriteria.FormattingEnabled = True
+        Me.cbbKriteria.Location = New System.Drawing.Point(104, 43)
+        Me.cbbKriteria.Name = "cbbKriteria"
+        Me.cbbKriteria.Size = New System.Drawing.Size(264, 29)
+        Me.cbbKriteria.TabIndex = 15
         '
         'Label3
         '
@@ -552,16 +442,6 @@ Partial Class FormBarang
         Label10.Size = New System.Drawing.Size(14, 21)
         Label10.TabIndex = 2
         Label10.Text = ":"
-        '
-        'Label11
-        '
-        Label11.AutoSize = True
-        Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label11.Location = New System.Drawing.Point(12, 87)
-        Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(52, 21)
-        Label11.TabIndex = 2
-        Label11.Text = "Jenis "
         '
         'DataGridViewTextBoxColumn1
         '
@@ -608,6 +488,169 @@ Partial Class FormBarang
         Me.DataGridViewTextBoxColumn6.HeaderText = "Stok"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        '
+        'Label11
+        '
+        Label11.AutoSize = True
+        Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label11.Location = New System.Drawing.Point(12, 87)
+        Label11.Name = "Label11"
+        Label11.Size = New System.Drawing.Size(52, 21)
+        Label11.TabIndex = 2
+        Label11.Text = "Jenis "
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Shopping_Cart_64px
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(875, 57)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "APLIKASI PENJUALAN MITRA RAYA"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Black
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Image = Global.Penjualan.My.Resources.Resources.Menu_White
+        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(249, 46)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "MENU"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnKeluar
+        '
+        Me.btnKeluar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnKeluar.FlatAppearance.BorderSize = 0
+        Me.btnKeluar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnKeluar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnKeluar.ForeColor = System.Drawing.Color.White
+        Me.btnKeluar.Image = Global.Penjualan.My.Resources.Resources.Shutdown_32px
+        Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnKeluar.Location = New System.Drawing.Point(8, 268)
+        Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnKeluar.Name = "btnKeluar"
+        Me.btnKeluar.Size = New System.Drawing.Size(251, 47)
+        Me.btnKeluar.TabIndex = 0
+        Me.btnKeluar.Text = "Keluar"
+        Me.btnKeluar.UseVisualStyleBackColor = False
+        '
+        'btnSimpan
+        '
+        Me.btnSimpan.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnSimpan.FlatAppearance.BorderSize = 0
+        Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSimpan.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSimpan.ForeColor = System.Drawing.Color.White
+        Me.btnSimpan.Image = Global.Penjualan.My.Resources.Resources.Save_32px
+        Me.btnSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSimpan.Location = New System.Drawing.Point(8, 112)
+        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnSimpan.Name = "btnSimpan"
+        Me.btnSimpan.Size = New System.Drawing.Size(251, 47)
+        Me.btnSimpan.TabIndex = 0
+        Me.btnSimpan.Text = "Simpan"
+        Me.btnSimpan.UseVisualStyleBackColor = False
+        '
+        'btnHapus
+        '
+        Me.btnHapus.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnHapus.FlatAppearance.BorderSize = 0
+        Me.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHapus.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHapus.ForeColor = System.Drawing.Color.White
+        Me.btnHapus.Image = Global.Penjualan.My.Resources.Resources.Trash_Can_32px
+        Me.btnHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHapus.Location = New System.Drawing.Point(8, 216)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnHapus.Name = "btnHapus"
+        Me.btnHapus.Size = New System.Drawing.Size(251, 47)
+        Me.btnHapus.TabIndex = 0
+        Me.btnHapus.Text = "Hapus"
+        Me.btnHapus.UseVisualStyleBackColor = False
+        '
+        'btnUbah
+        '
+        Me.btnUbah.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnUbah.FlatAppearance.BorderSize = 0
+        Me.btnUbah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUbah.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUbah.ForeColor = System.Drawing.Color.White
+        Me.btnUbah.Image = Global.Penjualan.My.Resources.Resources.Edit_32px
+        Me.btnUbah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnUbah.Location = New System.Drawing.Point(8, 164)
+        Me.btnUbah.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnUbah.Name = "btnUbah"
+        Me.btnUbah.Size = New System.Drawing.Size(251, 47)
+        Me.btnUbah.TabIndex = 0
+        Me.btnUbah.Text = "Ubah"
+        Me.btnUbah.UseVisualStyleBackColor = False
+        '
+        'btnTambah
+        '
+        Me.btnTambah.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnTambah.FlatAppearance.BorderSize = 0
+        Me.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTambah.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTambah.ForeColor = System.Drawing.Color.White
+        Me.btnTambah.Image = Global.Penjualan.My.Resources.Resources.Plus_Math_32px
+        Me.btnTambah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTambah.Location = New System.Drawing.Point(8, 60)
+        Me.btnTambah.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnTambah.Name = "btnTambah"
+        Me.btnTambah.Size = New System.Drawing.Size(251, 47)
+        Me.btnTambah.TabIndex = 0
+        Me.btnTambah.Text = "Tambah"
+        Me.btnTambah.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.Penjualan.My.Resources.Resources.Reset_16px
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(275, 121)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(93, 30)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Reset"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(174, 121)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(93, 30)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Cari"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'FormBarang
         '
@@ -662,13 +705,15 @@ Partial Class FormBarang
     Friend WithEvents SatuanComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents IdJenisComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents txtCari As System.Windows.Forms.TextBox
+    Friend WithEvents cbbKriteria As System.Windows.Forms.ComboBox
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class

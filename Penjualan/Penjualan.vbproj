@@ -203,6 +203,12 @@
   <ItemGroup>
     <None Include="Resources\Money_32px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reset_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_16px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
