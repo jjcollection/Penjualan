@@ -15,6 +15,14 @@ Penjualan
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Coins_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Edit_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Menu_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -23,11 +31,43 @@ Penjualan
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Money_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Monitor_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Person_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Plus_Math_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Save_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Shopping_Cart_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Shopping_Cart_32px_silver">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Shopping_Cart_64px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Shutdown_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Trash_Can_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

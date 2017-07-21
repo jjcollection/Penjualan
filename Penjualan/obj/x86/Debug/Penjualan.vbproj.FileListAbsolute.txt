@@ -1,5 +1,4 @@
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\bin\Debug\Penjualan.exe.config
-C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormPenjualan.resources
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.MenuUtama.resources
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.Resources.resources
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.vbproj.GenerateResource.Cache
@@ -9,3 +8,4 @@ C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjual
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.exe
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.xml
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.pdb
+C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormJual.resources
