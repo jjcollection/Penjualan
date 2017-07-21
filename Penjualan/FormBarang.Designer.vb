@@ -63,18 +63,18 @@ Partial Class FormBarang
         Me.HargaTextBox = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.BarangDataGridView = New System.Windows.Forms.DataGridView()
-        Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
-        Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
-        Me.JenisTableAdapter = New Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter()
-        Me.GridBarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridBarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter()
         Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NamaJenisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SatuanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StokDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GridBarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
+        Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
+        Me.JenisTableAdapter = New Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter()
+        Me.GridBarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter()
         KodeBarangLabel = New System.Windows.Forms.Label()
         IdJenisLabel = New System.Windows.Forms.Label()
         NamaBarangLabel = New System.Windows.Forms.Label()
@@ -99,8 +99,8 @@ Partial Class FormBarang
         CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridBarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'KodeBarangLabel
@@ -596,40 +596,6 @@ Partial Class FormBarang
         Me.BarangDataGridView.Size = New System.Drawing.Size(856, 446)
         Me.BarangDataGridView.TabIndex = 10
         '
-        'BarangBindingSource
-        '
-        Me.BarangBindingSource.DataMember = "Barang"
-        Me.BarangBindingSource.DataSource = Me.PenjualanDataSet
-        '
-        'BarangTableAdapter
-        '
-        Me.BarangTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BarangTableAdapter = Me.BarangTableAdapter
-        Me.TableAdapterManager.JenisTableAdapter = Me.JenisTableAdapter
-        Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
-        Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
-        Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
-        Me.TableAdapterManager.PenjualanMasterTableAdapter = Nothing
-        Me.TableAdapterManager.SupplierTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = Penjualan.penjualanDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'JenisTableAdapter
-        '
-        Me.JenisTableAdapter.ClearBeforeFill = True
-        '
-        'GridBarangBindingSource
-        '
-        Me.GridBarangBindingSource.DataMember = "gridBarang"
-        Me.GridBarangBindingSource.DataSource = Me.PenjualanDataSet
-        '
-        'GridBarangTableAdapter
-        '
-        Me.GridBarangTableAdapter.ClearBeforeFill = True
-        '
         'KodeBarangDataGridViewTextBoxColumn
         '
         Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
@@ -676,6 +642,40 @@ Partial Class FormBarang
         Me.StokDataGridViewTextBoxColumn.Name = "StokDataGridViewTextBoxColumn"
         Me.StokDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'GridBarangBindingSource
+        '
+        Me.GridBarangBindingSource.DataMember = "gridBarang"
+        Me.GridBarangBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'BarangBindingSource
+        '
+        Me.BarangBindingSource.DataMember = "Barang"
+        Me.BarangBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'BarangTableAdapter
+        '
+        Me.BarangTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BarangTableAdapter = Me.BarangTableAdapter
+        Me.TableAdapterManager.JenisTableAdapter = Me.JenisTableAdapter
+        Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
+        Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
+        Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
+        Me.TableAdapterManager.PenjualanMasterTableAdapter = Nothing
+        Me.TableAdapterManager.SupplierTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Penjualan.penjualanDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'JenisTableAdapter
+        '
+        Me.JenisTableAdapter.ClearBeforeFill = True
+        '
+        'GridBarangTableAdapter
+        '
+        Me.GridBarangTableAdapter.ClearBeforeFill = True
+        '
         'FormBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -702,8 +702,8 @@ Partial Class FormBarang
         CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridBarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
