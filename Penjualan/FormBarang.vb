@@ -8,6 +8,8 @@
     End Sub
 
     Private Sub FormBarang_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PenjualanDataSet.Jenis' table. You can move, or remove it, as needed.
+        Me.JenisTableAdapter.Fill(Me.PenjualanDataSet.Jenis)
         'TODO: This line of code loads data into the 'PenjualanDataSet.Barang' table. You can move, or remove it, as needed.
         Me.BarangTableAdapter.Fill(Me.PenjualanDataSet.Barang)
 

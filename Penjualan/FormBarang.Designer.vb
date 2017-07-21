@@ -69,8 +69,10 @@ Partial Class FormBarang
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnUbah = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.JenisBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.JenisTableAdapter = New Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter()
         KodeBarangLabel = New System.Windows.Forms.Label()
         IdJenisLabel = New System.Windows.Forms.Label()
         NamaBarangLabel = New System.Windows.Forms.Label()
@@ -95,6 +97,7 @@ Partial Class FormBarang
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.JenisBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -170,7 +173,7 @@ Partial Class FormBarang
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BarangTableAdapter = Me.BarangTableAdapter
-        Me.TableAdapterManager.JenisTableAdapter = Nothing
+        Me.TableAdapterManager.JenisTableAdapter = Me.JenisTableAdapter
         Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
         Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
         Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
@@ -244,7 +247,6 @@ Partial Class FormBarang
         '
         'KodeBarangTextBox
         '
-        Me.KodeBarangTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BarangBindingSource, "kodeBarang", True))
         Me.KodeBarangTextBox.Location = New System.Drawing.Point(154, 21)
         Me.KodeBarangTextBox.Name = "KodeBarangTextBox"
         Me.KodeBarangTextBox.Size = New System.Drawing.Size(298, 29)
@@ -272,7 +274,8 @@ Partial Class FormBarang
         '
         'NamaBarangTextBox
         '
-        Me.NamaBarangTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BarangBindingSource, "namaBarang", True))
+        Me.NamaBarangTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NamaBarangTextBox.Location = New System.Drawing.Point(154, 91)
         Me.NamaBarangTextBox.Name = "NamaBarangTextBox"
         Me.NamaBarangTextBox.Size = New System.Drawing.Size(298, 29)
@@ -290,7 +293,6 @@ Partial Class FormBarang
         '
         'HargaTextBox
         '
-        Me.HargaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BarangBindingSource, "harga", True))
         Me.HargaTextBox.Location = New System.Drawing.Point(154, 126)
         Me.HargaTextBox.Name = "HargaTextBox"
         Me.HargaTextBox.Size = New System.Drawing.Size(298, 29)
@@ -358,17 +360,19 @@ Partial Class FormBarang
         '
         'IdJenisComboBox
         '
-        Me.IdJenisComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BarangBindingSource, "idJenis", True))
+        Me.IdJenisComboBox.DataSource = Me.JenisBindingSource
+        Me.IdJenisComboBox.DisplayMember = "idJenis"
         Me.IdJenisComboBox.FormattingEnabled = True
         Me.IdJenisComboBox.Location = New System.Drawing.Point(154, 56)
         Me.IdJenisComboBox.Name = "IdJenisComboBox"
         Me.IdJenisComboBox.Size = New System.Drawing.Size(298, 29)
         Me.IdJenisComboBox.TabIndex = 15
+        Me.IdJenisComboBox.ValueMember = "namaJenis"
         '
         'SatuanComboBox
         '
-        Me.SatuanComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BarangBindingSource, "satuan", True))
         Me.SatuanComboBox.FormattingEnabled = True
+        Me.SatuanComboBox.Items.AddRange(New Object() {"PCS", "BOX", "DUS"})
         Me.SatuanComboBox.Location = New System.Drawing.Point(154, 161)
         Me.SatuanComboBox.Name = "SatuanComboBox"
         Me.SatuanComboBox.Size = New System.Drawing.Size(148, 29)
@@ -376,8 +380,7 @@ Partial Class FormBarang
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.txtCari)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -616,6 +619,24 @@ Partial Class FormBarang
         Me.btnTambah.Text = "Tambah"
         Me.btnTambah.UseVisualStyleBackColor = False
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(174, 121)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(93, 30)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Cari"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -634,23 +655,14 @@ Partial Class FormBarang
         Me.Button1.Text = "Reset"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Button2
+        'JenisBindingSource
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(174, 121)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(93, 30)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Cari"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.JenisBindingSource.DataMember = "Jenis"
+        Me.JenisBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'JenisTableAdapter
+        '
+        Me.JenisTableAdapter.ClearBeforeFill = True
         '
         'FormBarang
         '
@@ -678,6 +690,7 @@ Partial Class FormBarang
         Me.Panel6.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.JenisBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -715,5 +728,7 @@ Partial Class FormBarang
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents JenisTableAdapter As Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter
+    Friend WithEvents JenisBindingSource As System.Windows.Forms.BindingSource
 
 End Class
