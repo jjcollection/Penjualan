@@ -38,6 +38,15 @@ Partial Class FormJual
         Me.btnTransaksiBaru = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PenjualanDetilDataGridView = New System.Windows.Forms.DataGridView()
+        Me.idPenjulanDetil = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SatuanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JumlahBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GridPenjualanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.KodeBarangTextBox = New System.Windows.Forms.TextBox()
         Me.JumlahBeliTextBox = New System.Windows.Forms.TextBox()
@@ -54,23 +63,14 @@ Partial Class FormJual
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PenjualanMasterPenjualanDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GridPenjualanBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
-        Me.PenjualanDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PenjualanMasterBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PenjualanDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridPenjualanTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridPenjualanTableAdapter()
         Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PenjualanMasterTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PenjualanMasterTableAdapter()
         Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
         Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
         Me.PenjualanDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PenjualanDetilTableAdapter()
-        Me.idPenjulanDetil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SatuanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JumlahBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubTotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         NoTransaksiLabel = New System.Windows.Forms.Label()
         JumlahBeliLabel = New System.Windows.Forms.Label()
         KodeBarangLabel = New System.Windows.Forms.Label()
@@ -81,6 +81,8 @@ Partial Class FormJual
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.PenjualanDetilDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridPenjualanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -88,10 +90,8 @@ Partial Class FormJual
         Me.Panel9.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PenjualanMasterPenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridPenjualanBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PenjualanMasterBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -303,6 +303,71 @@ Partial Class FormJual
         Me.PenjualanDetilDataGridView.Size = New System.Drawing.Size(814, 428)
         Me.PenjualanDetilDataGridView.TabIndex = 10
         '
+        'idPenjulanDetil
+        '
+        Me.idPenjulanDetil.DataPropertyName = "idPenjulanDetil"
+        Me.idPenjulanDetil.HeaderText = "idPenjulanDetil"
+        Me.idPenjulanDetil.Name = "idPenjulanDetil"
+        Me.idPenjulanDetil.ReadOnly = True
+        Me.idPenjulanDetil.Visible = False
+        '
+        'KodeBarangDataGridViewTextBoxColumn
+        '
+        Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
+        Me.KodeBarangDataGridViewTextBoxColumn.HeaderText = "Kode Barang"
+        Me.KodeBarangDataGridViewTextBoxColumn.Name = "KodeBarangDataGridViewTextBoxColumn"
+        Me.KodeBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.KodeBarangDataGridViewTextBoxColumn.Width = 150
+        '
+        'NamaBarangDataGridViewTextBoxColumn
+        '
+        Me.NamaBarangDataGridViewTextBoxColumn.DataPropertyName = "namaBarang"
+        Me.NamaBarangDataGridViewTextBoxColumn.HeaderText = "Nama Barang"
+        Me.NamaBarangDataGridViewTextBoxColumn.Name = "NamaBarangDataGridViewTextBoxColumn"
+        Me.NamaBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NamaBarangDataGridViewTextBoxColumn.Width = 280
+        '
+        'SatuanDataGridViewTextBoxColumn
+        '
+        Me.SatuanDataGridViewTextBoxColumn.DataPropertyName = "satuan"
+        Me.SatuanDataGridViewTextBoxColumn.HeaderText = "Satuan"
+        Me.SatuanDataGridViewTextBoxColumn.Name = "SatuanDataGridViewTextBoxColumn"
+        Me.SatuanDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SatuanDataGridViewTextBoxColumn.Width = 80
+        '
+        'HargaDataGridViewTextBoxColumn
+        '
+        Me.HargaDataGridViewTextBoxColumn.DataPropertyName = "harga"
+        Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga"
+        Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
+        Me.HargaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.HargaDataGridViewTextBoxColumn.Width = 180
+        '
+        'JumlahBeliDataGridViewTextBoxColumn
+        '
+        Me.JumlahBeliDataGridViewTextBoxColumn.DataPropertyName = "jumlahBeli"
+        Me.JumlahBeliDataGridViewTextBoxColumn.HeaderText = "Jml"
+        Me.JumlahBeliDataGridViewTextBoxColumn.Name = "JumlahBeliDataGridViewTextBoxColumn"
+        Me.JumlahBeliDataGridViewTextBoxColumn.ReadOnly = True
+        Me.JumlahBeliDataGridViewTextBoxColumn.Width = 50
+        '
+        'SubTotalDataGridViewTextBoxColumn
+        '
+        Me.SubTotalDataGridViewTextBoxColumn.DataPropertyName = "subTotal"
+        Me.SubTotalDataGridViewTextBoxColumn.HeaderText = "Sub Total"
+        Me.SubTotalDataGridViewTextBoxColumn.Name = "SubTotalDataGridViewTextBoxColumn"
+        Me.SubTotalDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'GridPenjualanBindingSource
+        '
+        Me.GridPenjualanBindingSource.DataMember = "gridPenjualan"
+        Me.GridPenjualanBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'PenjualanDataSet
+        '
+        Me.PenjualanDataSet.DataSetName = "penjualanDataSet"
+        Me.PenjualanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Panel5
         '
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -488,11 +553,11 @@ Partial Class FormJual
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.BackColor = System.Drawing.Color.Black
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Shopping_Cart_64px
+        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Add_Shopping_Cart_64px
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
@@ -507,25 +572,15 @@ Partial Class FormJual
         Me.PenjualanMasterPenjualanDetilBindingSource.DataMember = "PenjualanMasterPenjualanDetil"
         Me.PenjualanMasterPenjualanDetilBindingSource.DataSource = Me.PenjualanMasterBindingSource
         '
-        'GridPenjualanBindingSource
+        'PenjualanMasterBindingSource
         '
-        Me.GridPenjualanBindingSource.DataMember = "gridPenjualan"
-        Me.GridPenjualanBindingSource.DataSource = Me.PenjualanDataSet
-        '
-        'PenjualanDataSet
-        '
-        Me.PenjualanDataSet.DataSetName = "penjualanDataSet"
-        Me.PenjualanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.PenjualanMasterBindingSource.DataMember = "PenjualanMaster"
+        Me.PenjualanMasterBindingSource.DataSource = Me.PenjualanDataSet
         '
         'PenjualanDetilBindingSource
         '
         Me.PenjualanDetilBindingSource.DataMember = "PenjualanDetil"
         Me.PenjualanDetilBindingSource.DataSource = Me.PenjualanDataSet
-        '
-        'PenjualanMasterBindingSource
-        '
-        Me.PenjualanMasterBindingSource.DataMember = "PenjualanMaster"
-        Me.PenjualanMasterBindingSource.DataSource = Me.PenjualanDataSet
         '
         'GridPenjualanTableAdapter
         '
@@ -560,61 +615,6 @@ Partial Class FormJual
         '
         Me.PenjualanDetilTableAdapter.ClearBeforeFill = True
         '
-        'idPenjulanDetil
-        '
-        Me.idPenjulanDetil.DataPropertyName = "idPenjulanDetil"
-        Me.idPenjulanDetil.HeaderText = "idPenjulanDetil"
-        Me.idPenjulanDetil.Name = "idPenjulanDetil"
-        Me.idPenjulanDetil.ReadOnly = True
-        Me.idPenjulanDetil.Visible = False
-        '
-        'KodeBarangDataGridViewTextBoxColumn
-        '
-        Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
-        Me.KodeBarangDataGridViewTextBoxColumn.HeaderText = "Kode Barang"
-        Me.KodeBarangDataGridViewTextBoxColumn.Name = "KodeBarangDataGridViewTextBoxColumn"
-        Me.KodeBarangDataGridViewTextBoxColumn.ReadOnly = True
-        Me.KodeBarangDataGridViewTextBoxColumn.Width = 150
-        '
-        'NamaBarangDataGridViewTextBoxColumn
-        '
-        Me.NamaBarangDataGridViewTextBoxColumn.DataPropertyName = "namaBarang"
-        Me.NamaBarangDataGridViewTextBoxColumn.HeaderText = "Nama Barang"
-        Me.NamaBarangDataGridViewTextBoxColumn.Name = "NamaBarangDataGridViewTextBoxColumn"
-        Me.NamaBarangDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NamaBarangDataGridViewTextBoxColumn.Width = 280
-        '
-        'SatuanDataGridViewTextBoxColumn
-        '
-        Me.SatuanDataGridViewTextBoxColumn.DataPropertyName = "satuan"
-        Me.SatuanDataGridViewTextBoxColumn.HeaderText = "Satuan"
-        Me.SatuanDataGridViewTextBoxColumn.Name = "SatuanDataGridViewTextBoxColumn"
-        Me.SatuanDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SatuanDataGridViewTextBoxColumn.Width = 80
-        '
-        'HargaDataGridViewTextBoxColumn
-        '
-        Me.HargaDataGridViewTextBoxColumn.DataPropertyName = "harga"
-        Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga"
-        Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
-        Me.HargaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.HargaDataGridViewTextBoxColumn.Width = 180
-        '
-        'JumlahBeliDataGridViewTextBoxColumn
-        '
-        Me.JumlahBeliDataGridViewTextBoxColumn.DataPropertyName = "jumlahBeli"
-        Me.JumlahBeliDataGridViewTextBoxColumn.HeaderText = "Jml"
-        Me.JumlahBeliDataGridViewTextBoxColumn.Name = "JumlahBeliDataGridViewTextBoxColumn"
-        Me.JumlahBeliDataGridViewTextBoxColumn.ReadOnly = True
-        Me.JumlahBeliDataGridViewTextBoxColumn.Width = 50
-        '
-        'SubTotalDataGridViewTextBoxColumn
-        '
-        Me.SubTotalDataGridViewTextBoxColumn.DataPropertyName = "subTotal"
-        Me.SubTotalDataGridViewTextBoxColumn.HeaderText = "Sub Total"
-        Me.SubTotalDataGridViewTextBoxColumn.Name = "SubTotalDataGridViewTextBoxColumn"
-        Me.SubTotalDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'FormJual
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -633,6 +633,8 @@ Partial Class FormJual
         Me.Panel2.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         CType(Me.PenjualanDetilDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridPenjualanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -641,10 +643,8 @@ Partial Class FormJual
         Me.Panel9.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.PenjualanMasterPenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridPenjualanBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PenjualanMasterBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

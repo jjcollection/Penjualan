@@ -15,6 +15,14 @@ Penjualan
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Add_Shopping_Cart_64px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Back_Arrow_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Buy_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -28,6 +36,10 @@ Penjualan
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Edit_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Forward_Button_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
