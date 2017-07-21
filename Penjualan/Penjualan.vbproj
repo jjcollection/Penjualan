@@ -222,13 +222,22 @@
     <None Include="Resources\Search_16px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Staff_64px.png" />
+    <None Include="Resources\Sales Channels.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Buy_32px.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Buy_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Luggage Trolley_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Luggage Trolley_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
