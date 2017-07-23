@@ -20,9 +20,26 @@
     End Sub
 
     Private Sub BarangDataGridView_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles BarangDataGridView.KeyDown
-        FormPembelian.KodeBarangTextBox.Text = BarangDataGridView.SelectedCells(0).Value
-        FormPembelian.JumlahBeliTextBox.Focus()
-        Me.Close()
+        If e.KeyCode = Keys.Enter Then
+            FormPembelian.KodeBarangTextBox.Text = BarangDataGridView.SelectedCells(0).Value
+            FormPembelian.KodeBarangTextBox.Focus()
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
+        GridBarangTableAdapter.FillByLike(PenjualanDataSet.gridBarang, TextBox1.Text, TextBox1.Text)
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        TextBox1.Text = ""
+        TextBox1.Focus()
+    End Sub
+
+    Private Sub TextBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox1.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BarangDataGridView.Focus()
+        End If
 
     End Sub
 End Class

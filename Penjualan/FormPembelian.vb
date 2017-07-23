@@ -32,24 +32,14 @@ Public Class FormPembelian
     Private Sub btnPemesananBaru_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPemesananBaru.Click
         kode_otomatis()
         PembelianMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, IdSupplierComboBox.SelectedValue, Date.Now, 0, 0)
-        txtNama.Focus()
-
+        KodeBarangTextBox.Focus()
     End Sub
 
 
 
     Private Sub FormPembelian_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PenjualanDataSet.Barang' table. You can move, or remove it, as needed.
-        Me.BarangTableAdapter.Fill(Me.PenjualanDataSet.Barang)
-        'TODO: This line of code loads data into the 'PenjualanDataSet.PembelianDetil' table. You can move, or remove it, as needed.
-        Me.PembelianDetilTableAdapter.Fill(Me.PenjualanDataSet.PembelianDetil)
-        'TODO: This line of code loads data into the 'PenjualanDataSet.gridPembelian' table. You can move, or remove it, as needed.
         GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
-        'TODO: This line of code loads data into the 'PenjualanDataSet.gridBarang' table. You can move, or remove it, as needed.
-        Me.GridBarangTableAdapter.Fill(Me.PenjualanDataSet.gridBarang)
-        'TODO: This line of code loads data into the 'PenjualanDataSet.Supplier' table. You can move, or remove it, as needed.
         Me.SupplierTableAdapter.Fill(Me.PenjualanDataSet.Supplier)
-        'TODO: This line of code loads data into the 'PenjualanDataSet.PembelianMaster' table. You can move, or remove it, as needed.
         Dim Conn = New OleDbConnection(My.Settings.penjualanConnectionString)
         Dim CMD = New OleDbCommand("SELECT * from Barang", Conn)
         Dim RD As OleDbDataReader
@@ -63,6 +53,10 @@ Public Class FormPembelian
             End With
         End While
         Conn.Close()
+        kode_otomatis()
+        PembelianMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, IdSupplierComboBox.SelectedValue, Date.Now, 0, 0)
+        KodeBarangTextBox.Focus()
+
     End Sub
 
 
@@ -92,6 +86,14 @@ Public Class FormPembelian
         ElseIf e.KeyCode = Keys.Enter Then
             PembelianDetilTableAdapter.InsertQuery(NoTransaksiTextBox.Text, KodeBarangTextBox.Text, JumlahBeliTextBox.Text, Val(txtHarga.Text) * Val(JumlahBeliTextBox.Text))
             GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
+            KodeBarangTextBox.Text = ""
+            txtNama.Text = "-"
+            txtHarga.Text = "0"
+            KodeBarangTextBox.Focus()
         End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        FormCariBarang.ShowDialog()
     End Sub
 End Class

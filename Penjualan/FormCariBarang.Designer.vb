@@ -102,7 +102,7 @@ Partial Class FormCariBarang
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Image = Global.Penjualan.My.Resources.Resources.Reset_16px
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(648, 20)
+        Me.Button1.Location = New System.Drawing.Point(640, 20)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(104, 29)
         Me.Button1.TabIndex = 2
@@ -116,7 +116,7 @@ Partial Class FormCariBarang
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(538, 20)
+        Me.Button2.Location = New System.Drawing.Point(530, 20)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(104, 29)
         Me.Button2.TabIndex = 2

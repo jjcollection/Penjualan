@@ -82,6 +82,7 @@ Partial Class FormPembelian
         Me.PembelianDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter()
         Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
+        Me.Button2 = New System.Windows.Forms.Button()
         NoTransaksiLabel = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
@@ -116,7 +117,7 @@ Partial Class FormPembelian
         '
         NoTransaksiLabel.AutoSize = True
         NoTransaksiLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NoTransaksiLabel.Location = New System.Drawing.Point(11, 28)
+        NoTransaksiLabel.Location = New System.Drawing.Point(11, 24)
         NoTransaksiLabel.Name = "NoTransaksiLabel"
         NoTransaksiLabel.Size = New System.Drawing.Size(68, 21)
         NoTransaksiLabel.TabIndex = 3
@@ -126,7 +127,7 @@ Partial Class FormPembelian
         '
         Label6.AutoSize = True
         Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label6.Location = New System.Drawing.Point(131, 28)
+        Label6.Location = New System.Drawing.Point(131, 24)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(14, 21)
         Label6.TabIndex = 3
@@ -134,6 +135,7 @@ Partial Class FormPembelian
         '
         'Label5
         '
+        Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Label5.AutoSize = True
         Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label5.Location = New System.Drawing.Point(608, 131)
@@ -144,6 +146,7 @@ Partial Class FormPembelian
         '
         'JumlahBeliLabel
         '
+        JumlahBeliLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         JumlahBeliLabel.AutoSize = True
         JumlahBeliLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         JumlahBeliLabel.Location = New System.Drawing.Point(539, 131)
@@ -176,7 +179,7 @@ Partial Class FormPembelian
         '
         Label7.AutoSize = True
         Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label7.Location = New System.Drawing.Point(308, 28)
+        Label7.Location = New System.Drawing.Point(341, 24)
         Label7.Name = "Label7"
         Label7.Size = New System.Drawing.Size(74, 21)
         Label7.TabIndex = 3
@@ -186,7 +189,7 @@ Partial Class FormPembelian
         '
         Label8.AutoSize = True
         Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label8.Location = New System.Drawing.Point(382, 28)
+        Label8.Location = New System.Drawing.Point(415, 24)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(14, 21)
         Label8.TabIndex = 3
@@ -319,19 +322,18 @@ Partial Class FormPembelian
         '
         'KodeBarangTextBox
         '
-        Me.KodeBarangTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.KodeBarangTextBox.BackColor = System.Drawing.Color.White
         Me.KodeBarangTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.KodeBarangTextBox.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KodeBarangTextBox.ForeColor = System.Drawing.Color.Black
         Me.KodeBarangTextBox.Location = New System.Drawing.Point(151, 61)
         Me.KodeBarangTextBox.Name = "KodeBarangTextBox"
-        Me.KodeBarangTextBox.Size = New System.Drawing.Size(535, 29)
+        Me.KodeBarangTextBox.Size = New System.Drawing.Size(253, 29)
         Me.KodeBarangTextBox.TabIndex = 6
         '
         'JumlahBeliTextBox
         '
+        Me.JumlahBeliTextBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.JumlahBeliTextBox.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.JumlahBeliTextBox.Location = New System.Drawing.Point(630, 128)
         Me.JumlahBeliTextBox.Name = "JumlahBeliTextBox"
@@ -347,10 +349,10 @@ Partial Class FormPembelian
         Me.NoTransaksiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NoTransaksiTextBox.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.NoTransaksiTextBox.ForeColor = System.Drawing.Color.White
-        Me.NoTransaksiTextBox.Location = New System.Drawing.Point(149, 24)
+        Me.NoTransaksiTextBox.Location = New System.Drawing.Point(149, 20)
         Me.NoTransaksiTextBox.Name = "NoTransaksiTextBox"
         Me.NoTransaksiTextBox.ReadOnly = True
-        Me.NoTransaksiTextBox.Size = New System.Drawing.Size(153, 29)
+        Me.NoTransaksiTextBox.Size = New System.Drawing.Size(186, 29)
         Me.NoTransaksiTextBox.TabIndex = 4
         Me.NoTransaksiTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -397,6 +399,7 @@ Partial Class FormPembelian
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.IdSupplierComboBox)
         Me.Panel5.Controls.Add(Me.txtHarga)
         Me.Panel5.Controls.Add(Me.txtNama)
@@ -425,7 +428,7 @@ Partial Class FormPembelian
         Me.IdSupplierComboBox.DataSource = Me.SupplierBindingSource
         Me.IdSupplierComboBox.DisplayMember = "namaSupplier"
         Me.IdSupplierComboBox.FormattingEnabled = True
-        Me.IdSupplierComboBox.Location = New System.Drawing.Point(402, 23)
+        Me.IdSupplierComboBox.Location = New System.Drawing.Point(436, 20)
         Me.IdSupplierComboBox.Name = "IdSupplierComboBox"
         Me.IdSupplierComboBox.Size = New System.Drawing.Size(250, 29)
         Me.IdSupplierComboBox.TabIndex = 12
@@ -452,7 +455,7 @@ Partial Class FormPembelian
         Me.txtHarga.Location = New System.Drawing.Point(149, 129)
         Me.txtHarga.Name = "txtHarga"
         Me.txtHarga.ReadOnly = True
-        Me.txtHarga.Size = New System.Drawing.Size(255, 29)
+        Me.txtHarga.Size = New System.Drawing.Size(384, 29)
         Me.txtHarga.TabIndex = 6
         '
         'txtNama
@@ -746,6 +749,20 @@ Partial Class FormPembelian
         '
         Me.BarangTableAdapter.ClearBeforeFill = True
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(410, 61)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(89, 29)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Cari"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'FormPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -827,4 +844,5 @@ Partial Class FormPembelian
     Friend WithEvents SubTotalBeliDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txtHarga As System.Windows.Forms.TextBox
     Friend WithEvents txtNama As System.Windows.Forms.TextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class
