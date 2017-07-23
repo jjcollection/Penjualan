@@ -91,6 +91,14 @@ Penjualan
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Search_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Search_64px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Shopping_Cart_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -155,6 +163,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Penjualan.penjualanDataSet.gridPembelianDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Penjualan.penjualanDataSet.BarangRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -191,6 +203,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Penjualan.penjualanDataSet.gridPembelianRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Penjualan.penjualanDataSet.BarangRowChangeEvent">
 	<summary>
 Row event argument class
@@ -224,6 +240,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:Penjualan.penjualanDataSet.gridBarangRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Penjualan.penjualanDataSet.gridPembelianRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -264,6 +284,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Penjualan.penjualanDataSetTableAdapters.gridPembelianTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

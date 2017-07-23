@@ -28,4 +28,15 @@
     Private Sub btnKeluar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKeluar.Click
         Me.Close()
     End Sub
+
+    Private Sub btnSimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSimpan.Click
+        Try
+            BarangTableAdapter.InsertQuery(KodeBarangTextBox.Text, IdJenisComboBox.SelectedValue, NamaBarangTextBox.Text, HargaTextBox.Text, SatuanComboBox.Text)
+            MsgBox("data telah disimpan.", MsgBoxStyle.Information, "Informasi")
+            BarangTableAdapter.Fill(PenjualanDataSet.Barang)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

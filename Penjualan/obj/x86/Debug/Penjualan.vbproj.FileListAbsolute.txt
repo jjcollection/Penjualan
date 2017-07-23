@@ -13,3 +13,4 @@ C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjual
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormSupplier.resources
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormJenis.resources
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormPembelian.resources
+C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormCariBarang.resources
