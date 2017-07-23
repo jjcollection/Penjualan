@@ -4,6 +4,7 @@ Public Class FormPembelian
     Dim tbl As New DataTable
     Dim tgl, tahun, digit, kodebr As String
     Dim subtotal, hargabr As Double
+    Dim total, item As Double
     Sub kode_otomatis()
         tgl = Date.Now.Day
         tahun = Date.Now.Year
@@ -68,13 +69,20 @@ Public Class FormPembelian
 
         End If
     End Sub
-
-    Private Sub KodeBarangTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles KodeBarangTextBox.KeyDown
-        If e.KeyCode = Keys.Enter Then
+    Public Sub tampilharga()
+        Try
             Dim dt = BarangTableAdapter.GetDataByKode(KodeBarangTextBox.Text)
             txtNama.Text = dt.Rows(0).Item("namaBarang")
             txtHarga.Text = dt.Rows(0).Item("harga")
             JumlahBeliTextBox.Focus()
+        Catch ex As Exception
+            MsgBox("Barang tidak ditemukan", MsgBoxStyle.Information, "info")
+        End Try
+       
+    End Sub
+    Private Sub KodeBarangTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles KodeBarangTextBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            tampilharga()
         End If
     End Sub
 
@@ -86,6 +94,10 @@ Public Class FormPembelian
         ElseIf e.KeyCode = Keys.Enter Then
             PembelianDetilTableAdapter.InsertQuery(NoTransaksiTextBox.Text, KodeBarangTextBox.Text, JumlahBeliTextBox.Text, Val(txtHarga.Text) * Val(JumlahBeliTextBox.Text))
             GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
+            total = PembelianDetilTableAdapter.ScalarQuery(NoTransaksiTextBox.Text)
+            item = PembelianDetilTableAdapter.ScalarQueryItem(NoTransaksiTextBox.Text)
+            lbTotal.Text = Format(total, "Currency")
+            lbitem.Text = item
             KodeBarangTextBox.Text = ""
             txtNama.Text = "-"
             txtHarga.Text = "0"
@@ -95,5 +107,9 @@ Public Class FormPembelian
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         FormCariBarang.ShowDialog()
+    End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+        Me.Close()
     End Sub
 End Class

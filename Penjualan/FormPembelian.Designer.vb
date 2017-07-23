@@ -48,6 +48,7 @@ Partial Class FormPembelian
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.IdSupplierComboBox = New System.Windows.Forms.ComboBox()
         Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
@@ -82,7 +83,6 @@ Partial Class FormPembelian
         Me.PembelianDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter()
         Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
-        Me.Button2 = New System.Windows.Forms.Button()
         NoTransaksiLabel = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
@@ -423,6 +423,20 @@ Partial Class FormPembelian
         Me.Panel5.Size = New System.Drawing.Size(693, 165)
         Me.Panel5.TabIndex = 14
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(410, 61)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(89, 29)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Cari"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'IdSupplierComboBox
         '
         Me.IdSupplierComboBox.DataSource = Me.SupplierBindingSource
@@ -557,14 +571,14 @@ Partial Class FormPembelian
         Me.btnBayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBayar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBayar.ForeColor = System.Drawing.Color.White
-        Me.btnBayar.Image = Global.Penjualan.My.Resources.Resources.Money_32px
+        Me.btnBayar.Image = Global.Penjualan.My.Resources.Resources.Sync_32px
         Me.btnBayar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBayar.Location = New System.Drawing.Point(7, 163)
         Me.btnBayar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBayar.Name = "btnBayar"
         Me.btnBayar.Size = New System.Drawing.Size(251, 47)
         Me.btnBayar.TabIndex = 0
-        Me.btnBayar.Text = "Bayar"
+        Me.btnBayar.Text = "Return"
         Me.btnBayar.UseVisualStyleBackColor = False
         '
         'btnCetakPemesanan
@@ -748,20 +762,6 @@ Partial Class FormPembelian
         'BarangTableAdapter
         '
         Me.BarangTableAdapter.ClearBeforeFill = True
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(410, 61)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(89, 29)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Cari"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'FormPembelian
         '

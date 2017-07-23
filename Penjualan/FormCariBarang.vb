@@ -22,7 +22,8 @@
     Private Sub BarangDataGridView_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles BarangDataGridView.KeyDown
         If e.KeyCode = Keys.Enter Then
             FormPembelian.KodeBarangTextBox.Text = BarangDataGridView.SelectedCells(0).Value
-            FormPembelian.KodeBarangTextBox.Focus()
+            FormPembelian.tampilharga()
+            FormPembelian.JumlahBeliTextBox.Focus()
             Me.Close()
         End If
     End Sub
