@@ -39,14 +39,15 @@ Public Class FormPembelian
 
 
     Private Sub FormPembelian_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
+        tampilPemesanan(NoTransaksiTextBox.Text)
+        '  GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
         Me.SupplierTableAdapter.Fill(Me.PenjualanDataSet.Supplier)
         Dim Conn = New OleDbConnection(My.Settings.penjualanConnectionString)
         Dim CMD = New OleDbCommand("SELECT * from Barang", Conn)
         Dim RD As OleDbDataReader
         Conn.Open()
         RD = CMD.ExecuteReader
-        While RD.read
+        While RD.Read
             With KodeBarangTextBox
                 .AutoCompleteCustomSource.Add(RD("kodeBarang").ToString)
                 .AutoCompleteMode = AutoCompleteMode.Suggest
@@ -57,7 +58,7 @@ Public Class FormPembelian
         kode_otomatis()
         PembelianMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, IdSupplierComboBox.SelectedValue, Date.Now, 0, 0)
         KodeBarangTextBox.Focus()
-
+        lbTanggal.Text = Date.Now.Date
     End Sub
 
 
@@ -68,6 +69,15 @@ Public Class FormPembelian
             JumlahBeliTextBox.Focus()
 
         End If
+    End Sub
+    Public Sub tampilPemesanan(ByVal no As String)
+        Try
+            GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, no)
+            JumlahBeliTextBox.Focus()
+        Catch ex As Exception
+            MsgBox("Barang tidak ditemukan", MsgBoxStyle.Information, "info")
+        End Try
+
     End Sub
     Public Sub tampilharga()
         Try
@@ -102,6 +112,7 @@ Public Class FormPembelian
             txtNama.Text = "-"
             txtHarga.Text = "0"
             KodeBarangTextBox.Focus()
+            PembelianMasterTableAdapter.UpdateQuery(NoTransaksiTextBox.Text, lbitem.Text, lbTotal.Text, NoTransaksiTextBox.Text)
         End If
     End Sub
 
@@ -111,5 +122,44 @@ Public Class FormPembelian
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnHapus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnHapus.Click
+        Try
+            PembelianDetilTableAdapter.DeleteQuery(PenjualanDetilDataGridView.SelectedCells(0).Value)
+            GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
+            total = PembelianDetilTableAdapter.ScalarQuery(NoTransaksiTextBox.Text)
+            item = PembelianDetilTableAdapter.ScalarQueryItem(NoTransaksiTextBox.Text)
+            lbTotal.Text = Format(total, "Currency")
+            lbitem.Text = item
+            KodeBarangTextBox.Text = ""
+            txtNama.Text = "-"
+            txtHarga.Text = "0"
+            KodeBarangTextBox.Focus()
+            PembelianMasterTableAdapter.UpdateQuery(NoTransaksiTextBox.Text, lbitem.Text, lbTotal.Text, NoTransaksiTextBox.Text)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        If MessageBox.Show("Apakah anda yakin akan menghapus PO Nomor " & NoTransaksiTextBox.Text & "?", "Pertanyaan", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            PembelianMasterTableAdapter.DeleteQuery(NoTransaksiTextBox.Text)
+            GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
+            lbTotal.Text = "0"
+            lbitem.Text = "0"
+            KodeBarangTextBox.Text = ""
+            txtNama.Text = "-"
+            txtHarga.Text = "0"
+            kode_otomatis()
+            PembelianMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, IdSupplierComboBox.SelectedValue, Date.Now, 0, 0)
+            KodeBarangTextBox.Focus()
+        Else
+            KodeBarangTextBox.Focus()
+        End If
+    End Sub
+
+    Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
+        DialogPO.ShowDialog()
     End Sub
 End Class

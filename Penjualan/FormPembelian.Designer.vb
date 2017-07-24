@@ -58,6 +58,7 @@ Partial Class FormPembelian
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnBayar = New System.Windows.Forms.Button()
         Me.btnCetakPemesanan = New System.Windows.Forms.Button()
@@ -519,6 +520,7 @@ Partial Class FormPembelian
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.btnHapus)
         Me.Panel1.Controls.Add(Me.btnBayar)
         Me.Panel1.Controls.Add(Me.btnCetakPemesanan)
@@ -539,13 +541,30 @@ Partial Class FormPembelian
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.Image = Global.Penjualan.My.Resources.Resources.Shutdown_32px
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(7, 263)
+        Me.Button6.Location = New System.Drawing.Point(7, 303)
         Me.Button6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(251, 47)
         Me.Button6.TabIndex = 0
         Me.Button6.Text = "Keluar"
         Me.Button6.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = Global.Penjualan.My.Resources.Resources.Eraser_32px
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(7, 159)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(251, 47)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Hapus PO"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'btnHapus
         '
@@ -556,12 +575,12 @@ Partial Class FormPembelian
         Me.btnHapus.ForeColor = System.Drawing.Color.White
         Me.btnHapus.Image = Global.Penjualan.My.Resources.Resources.Trash_Can_32px
         Me.btnHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHapus.Location = New System.Drawing.Point(7, 113)
+        Me.btnHapus.Location = New System.Drawing.Point(7, 111)
         Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(251, 47)
         Me.btnHapus.TabIndex = 0
-        Me.btnHapus.Text = "Hapus"
+        Me.btnHapus.Text = "Hapus Item"
         Me.btnHapus.UseVisualStyleBackColor = False
         '
         'btnBayar
@@ -573,7 +592,7 @@ Partial Class FormPembelian
         Me.btnBayar.ForeColor = System.Drawing.Color.White
         Me.btnBayar.Image = Global.Penjualan.My.Resources.Resources.Sync_32px
         Me.btnBayar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBayar.Location = New System.Drawing.Point(7, 163)
+        Me.btnBayar.Location = New System.Drawing.Point(7, 207)
         Me.btnBayar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnBayar.Name = "btnBayar"
         Me.btnBayar.Size = New System.Drawing.Size(251, 47)
@@ -590,7 +609,7 @@ Partial Class FormPembelian
         Me.btnCetakPemesanan.ForeColor = System.Drawing.Color.White
         Me.btnCetakPemesanan.Image = Global.Penjualan.My.Resources.Resources.Printer_Maintenance_32px
         Me.btnCetakPemesanan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCetakPemesanan.Location = New System.Drawing.Point(7, 213)
+        Me.btnCetakPemesanan.Location = New System.Drawing.Point(7, 255)
         Me.btnCetakPemesanan.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCetakPemesanan.Name = "btnCetakPemesanan"
         Me.btnCetakPemesanan.Size = New System.Drawing.Size(251, 47)
@@ -768,7 +787,7 @@ Partial Class FormPembelian
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DimGray
-        Me.ClientSize = New System.Drawing.Size(1309, 741)
+        Me.ClientSize = New System.Drawing.Size(1309, 733)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
@@ -845,4 +864,5 @@ Partial Class FormPembelian
     Friend WithEvents txtHarga As System.Windows.Forms.TextBox
     Friend WithEvents txtNama As System.Windows.Forms.TextBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
