@@ -130,6 +130,12 @@
     <Compile Include="FormSupplier.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormTerimaStok.Designer.vb">
+      <DependentUpon>FormTerimaStok.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTerimaStok.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MenuUtama.Designer.vb">
       <DependentUpon>MenuUtama.vb</DependentUpon>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier.resx">
       <DependentUpon>FormSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTerimaStok.resx">
+      <DependentUpon>FormTerimaStok.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuUtama.resx">
       <DependentUpon>MenuUtama.vb</DependentUpon>
@@ -328,6 +337,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Eraser_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Move Stock_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Move Stock_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

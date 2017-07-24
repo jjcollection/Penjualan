@@ -25,4 +25,8 @@ Public Class MenuUtama
     Private Sub btnPembelian_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPembelian.Click
         FormPembelian.Show()
     End Sub
+
+    Private Sub btnTerima_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerima.Click
+        FormTerimaStok.Show()
+    End Sub
 End Class
