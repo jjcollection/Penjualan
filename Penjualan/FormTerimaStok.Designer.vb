@@ -71,6 +71,8 @@ Partial Class FormTerimaStok
         Me.jmlDatang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PembelianDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PembelianDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter()
         Label6 = New System.Windows.Forms.Label()
         NoTransaksiLabel = New System.Windows.Forms.Label()
         Label4 = New System.Windows.Forms.Label()
@@ -91,6 +93,7 @@ Partial Class FormTerimaStok
         CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridSupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PembelianMasterBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PembelianDetilBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label6
@@ -167,7 +170,7 @@ Partial Class FormTerimaStok
         Me.Panel4.Controls.Add(Me.Panel8)
         Me.Panel4.Location = New System.Drawing.Point(276, 69)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1029, 659)
+        Me.Panel4.Size = New System.Drawing.Size(1039, 659)
         Me.Panel4.TabIndex = 18
         '
         'PenjualanDetilDataGridView
@@ -183,8 +186,8 @@ Partial Class FormTerimaStok
         Me.PenjualanDetilDataGridView.DataSource = Me.GridPembelianBindingSource
         Me.PenjualanDetilDataGridView.Location = New System.Drawing.Point(6, 214)
         Me.PenjualanDetilDataGridView.Name = "PenjualanDetilDataGridView"
-        Me.PenjualanDetilDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.PenjualanDetilDataGridView.Size = New System.Drawing.Size(1014, 440)
+        Me.PenjualanDetilDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.PenjualanDetilDataGridView.Size = New System.Drawing.Size(1024, 440)
         Me.PenjualanDetilDataGridView.TabIndex = 10
         '
         'Panel5
@@ -201,7 +204,7 @@ Partial Class FormTerimaStok
         Me.Panel5.Controls.Add(KodeBarangLabel)
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(693, 220)
+        Me.Panel5.Size = New System.Drawing.Size(703, 230)
         Me.Panel5.TabIndex = 14
         '
         'GroupBox1
@@ -253,7 +256,7 @@ Partial Class FormTerimaStok
         Me.Panel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel6.Controls.Add(Me.Label3)
-        Me.Panel6.Location = New System.Drawing.Point(698, 0)
+        Me.Panel6.Location = New System.Drawing.Point(708, 0)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(324, 22)
         Me.Panel6.TabIndex = 15
@@ -279,7 +282,7 @@ Partial Class FormTerimaStok
         Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel7.Controls.Add(Me.lbTanggal)
         Me.Panel7.Controls.Add(Me.lbitem)
-        Me.Panel7.Location = New System.Drawing.Point(698, 99)
+        Me.Panel7.Location = New System.Drawing.Point(708, 99)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(324, 40)
         Me.Panel7.TabIndex = 13
@@ -323,7 +326,7 @@ Partial Class FormTerimaStok
         Me.Panel8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel8.Controls.Add(Me.lbTotal)
-        Me.Panel8.Location = New System.Drawing.Point(698, 28)
+        Me.Panel8.Location = New System.Drawing.Point(708, 28)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(324, 64)
         Me.Panel8.TabIndex = 11
@@ -382,7 +385,7 @@ Partial Class FormTerimaStok
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Location = New System.Drawing.Point(277, 7)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1028, 59)
+        Me.Panel3.Size = New System.Drawing.Size(1038, 59)
         Me.Panel3.TabIndex = 17
         '
         'IdSupplierLabel
@@ -522,7 +525,7 @@ Partial Class FormTerimaStok
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1026, 57)
+        Me.Label2.Size = New System.Drawing.Size(1036, 57)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "PEMBELIAN - STOK MASUK"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -620,20 +623,29 @@ Partial Class FormTerimaStok
         '
         Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga"
         Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
-        Me.HargaDataGridViewTextBoxColumn.ReadOnly = True
         Me.HargaDataGridViewTextBoxColumn.Width = 180
         '
         'SubTotal
         '
         Me.SubTotal.HeaderText = "Sub Total"
         Me.SubTotal.Name = "SubTotal"
+        Me.SubTotal.ReadOnly = True
         Me.SubTotal.Width = 180
+        '
+        'PembelianDetilBindingSource
+        '
+        Me.PembelianDetilBindingSource.DataMember = "PembelianDetil"
+        Me.PembelianDetilBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'PembelianDetilTableAdapter
+        '
+        Me.PembelianDetilTableAdapter.ClearBeforeFill = True
         '
         'FormTerimaStok
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1309, 733)
+        Me.ClientSize = New System.Drawing.Size(1319, 733)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
@@ -658,6 +670,7 @@ Partial Class FormTerimaStok
         CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridSupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PembelianMasterBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PembelianDetilBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -703,4 +716,6 @@ Partial Class FormTerimaStok
     Friend WithEvents jmlDatang As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents HargaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SubTotal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PembelianDetilBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents PembelianDetilTableAdapter As Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter
 End Class
