@@ -37,7 +37,7 @@
 
     Private Sub btnSimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSimpan.Click
         For i As Integer = 0 To PenjualanDetilDataGridView.Rows.Count - 1
-            PembelianDetilTableAdapter  .UpdateQuer(NoTransaksiTextBox .Text ,
+            ' PembelianDetilTableAdapter  .UpdateQuer(NoTransaksiTextBox .Text ,
         Next
     End Sub
 
