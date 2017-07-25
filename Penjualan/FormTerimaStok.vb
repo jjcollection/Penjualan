@@ -1,6 +1,12 @@
 ﻿Public Class FormTerimaStok
     Dim item As Double
     Private Sub FormTerimaStok_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PenjualanDataSet.Pengaturan' table. You can move, or remove it, as needed.
+        Me.PengaturanTableAdapter.Fill(Me.PenjualanDataSet.Pengaturan)
+        'TODO: This line of code loads data into the 'PenjualanDataSet.Barang' table. You can move, or remove it, as needed.
+        Me.BarangTableAdapter.Fill(Me.PenjualanDataSet.Barang)
+        'TODO: This line of code loads data into the 'PenjualanDataSet.Barang' table. You can move, or remove it, as needed.
+        Me.BarangTableAdapter.Fill(Me.PenjualanDataSet.Barang)
         'TODO: This line of code loads data into the 'PenjualanDataSet.PembelianDetil' table. You can move, or remove it, as needed.
         Me.PembelianDetilTableAdapter.Fill(Me.PenjualanDataSet.PembelianDetil)
         'TODO: This line of code loads data into the 'PenjualanDataSet.PembelianDetil' table. You can move, or remove it, as needed.
@@ -37,10 +43,15 @@
     End Sub
 
     Private Sub btnSimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSimpan.Click
+        Dim aturan = PengaturanTableAdapter.GetDataById(1)
+        Dim keuntungan As Double
+        keuntungan = aturan.Rows(0).Item("keuntungan")
         For i As Integer = 0 To PenjualanDetilDataGridView.Rows.Count - 1
-            PembelianDetilTableAdapter.UpdatePenerimaan(Val(PenjualanDetilDataGridView.Rows(i).Cells(5).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(7).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(6).Value), PenjualanDetilDataGridView.Rows(i).Cells(0).Value)
+            PembelianDetilTableAdapter.UpdatePenerimaan(Val(PenjualanDetilDataGridView.Rows(i).Cells(5).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(7).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(6).Value), "Komplet", PenjualanDetilDataGridView.Rows(i).Cells(0).Value)
+            BarangTableAdapter.UpdateJumlahBarang(PenjualanDetilDataGridView.Rows(i).Cells(2).Value, (keuntungan / 100) * Val(CDbl(PenjualanDetilDataGridView.Rows(i).Cells(6).Value)) + CDbl(PenjualanDetilDataGridView.Rows(i).Cells(6).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(5).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(6).Value), PenjualanDetilDataGridView.Rows(i).Cells(2).Value)
         Next
         PembelianMasterTableAdapter.UpdateQuery(NoTransaksiTextBox.Text, item, lbTotal.Text, NoTransaksiTextBox.Text)
+
         MsgBox("Data telah disimpan", MsgBoxStyle.Information, "Informasi")
     End Sub
 
@@ -93,5 +104,13 @@
         ' Draw row number
         e.Graphics.DrawString(rowNumber, dg.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
 
+    End Sub
+    Private Sub btnPemesananBaru_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPemesananBaru.Click
+        NoTransaksiTextBox.Text = ""
+        NoTransaksiTextBox.Focus()
+    End Sub
+
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
+        Me.Close()
     End Sub
 End Class

@@ -84,7 +84,6 @@ Partial Class FormPembelian
         Me.PembelianDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter()
         Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
-        Me.chkShowExcelIssue = New System.Windows.Forms.CheckBox()
         NoTransaksiLabel = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
@@ -401,7 +400,6 @@ Partial Class FormPembelian
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel5.Controls.Add(Me.chkShowExcelIssue)
         Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.IdSupplierComboBox)
         Me.Panel5.Controls.Add(Me.txtHarga)
@@ -784,16 +782,6 @@ Partial Class FormPembelian
         '
         Me.BarangTableAdapter.ClearBeforeFill = True
         '
-        'chkShowExcelIssue
-        '
-        Me.chkShowExcelIssue.AutoSize = True
-        Me.chkShowExcelIssue.Location = New System.Drawing.Point(15, 3)
-        Me.chkShowExcelIssue.Name = "chkShowExcelIssue"
-        Me.chkShowExcelIssue.Size = New System.Drawing.Size(105, 25)
-        Me.chkShowExcelIssue.TabIndex = 14
-        Me.chkShowExcelIssue.Text = "CheckBox1"
-        Me.chkShowExcelIssue.UseVisualStyleBackColor = True
-        '
         'FormPembelian
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -877,5 +865,4 @@ Partial Class FormPembelian
     Friend WithEvents txtNama As System.Windows.Forms.TextBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents chkShowExcelIssue As System.Windows.Forms.CheckBox
 End Class

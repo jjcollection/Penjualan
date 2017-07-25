@@ -1,18 +1,11 @@
 ﻿Public Class FormCariBarang
 
-    Private Sub BarangBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.Validate()
-        Me.BarangBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PenjualanDataSet)
-
-    End Sub
 
     Private Sub FormCariBarang_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PenjualanDataSet.gridBarang' table. You can move, or remove it, as needed.
         Me.GridBarangTableAdapter.Fill(Me.PenjualanDataSet.gridBarang)
-        'TODO: This line of code loads data into the 'PenjualanDataSet.Barang' table. You can move, or remove it, as needed.
         Me.BarangTableAdapter.Fill(Me.PenjualanDataSet.Barang)
-
+        TextBox1.Text = ""
+        TextBox1.Focus()
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -23,8 +16,11 @@
         If e.KeyCode = Keys.Enter Then
             FormPembelian.KodeBarangTextBox.Text = BarangDataGridView.SelectedCells(0).Value
             FormPembelian.tampilharga()
-            FormPembelian.JumlahBeliTextBox.Focus()
+            TextBox1.Text = ""
             Me.Close()
+        ElseIf e.KeyCode = Keys.F1 Then
+            TextBox1.Text = ""
+            TextBox1.Focus()
         End If
     End Sub
 
@@ -40,7 +36,33 @@
     Private Sub TextBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox1.KeyDown
         If e.KeyCode = Keys.Enter Then
             BarangDataGridView.Focus()
+        ElseIf e.KeyCode = Keys.Down Then
+            BarangDataGridView.Focus()
         End If
+
+    End Sub
+
+    Private Sub BarangDataGridView_RowPostPaint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewRowPostPaintEventArgs) Handles BarangDataGridView.RowPostPaint
+        Dim dg As DataGridView = DirectCast(sender, DataGridView)
+        ' Current row record
+        Dim rowNumber As String = (e.RowIndex + 1).ToString()
+
+        ' Format row based on number of records displayed by using leading zeros
+        While rowNumber.Length < dg.RowCount.ToString().Length
+            rowNumber = "0" & rowNumber
+        End While
+
+        ' Position text
+        Dim size As SizeF = e.Graphics.MeasureString(rowNumber, Me.Font)
+        If dg.RowHeadersWidth < CInt(size.Width + 20) Then
+            dg.RowHeadersWidth = CInt(size.Width + 20)
+        End If
+
+        ' Use default system text brush
+        Dim b As Brush = SystemBrushes.ControlText
+
+        ' Draw row number
+        e.Graphics.DrawString(rowNumber, dg.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
 
     End Sub
 End Class

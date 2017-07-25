@@ -75,20 +75,27 @@
     End Sub
     Private Sub JumlahBeliTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles JumlahBeliTextBox.KeyDown
         If e.KeyCode = Keys.Enter Then
-            PenjualanDetilTableAdapter.InsertQuery(NoTransaksiTextBox.Text, KodeBarangTextBox.Text.ToUpper, JumlahBeliTextBox.Text, Val(JumlahBeliTextBox.Text) * hargabr)
-            GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
+            Dim br = BarangTableAdapter.GetDataByKode(KodeBarangTextBox.Text)
+            Dim jmlstok = br.Rows(0).Item("stok")
+            If (Val(jmlstok) < Val(JumlahBeliTextBox.Text)) Then
+                MsgBox("Stok tidak cukup")
+            Else
+                PenjualanDetilTableAdapter.InsertQuery(NoTransaksiTextBox.Text, KodeBarangTextBox.Text.ToUpper, JumlahBeliTextBox.Text, Val(JumlahBeliTextBox.Text) * hargabr)
+                GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
 
-            Dim totalbelanja = PenjualanDetilTableAdapter.subtotal(NoTransaksiTextBox.Text)
-            Dim totalItem = PenjualanDetilTableAdapter.jmlitem(NoTransaksiTextBox.Text)
+                Dim totalbelanja = PenjualanDetilTableAdapter.subtotal(NoTransaksiTextBox.Text)
+                Dim totalItem = PenjualanDetilTableAdapter.jmlitem(NoTransaksiTextBox.Text)
 
-            lbTotal.Text = totalbelanja
-            lbitem.Text = "Item :" & totalItem
-            lbTanggal.Text = Date.Today.Date
-            PenjualanMasterTableAdapter.UpdateTotal(totalItem, totalbelanja, NoTransaksiTextBox.Text)
-            KodeBarangTextBox.Focus()
-            KodeBarangTextBox.Text = ""
-            JumlahBeliTextBox.Text = "1"
-            btnenable()
+                lbTotal.Text = totalbelanja
+                lbitem.Text = "Item :" & totalItem
+                lbTanggal.Text = Date.Today.Date
+                PenjualanMasterTableAdapter.UpdateTotal(totalItem, totalbelanja, NoTransaksiTextBox.Text)
+                BarangTableAdapter.UpdateKurangiStok(KodeBarangTextBox.Text, JumlahBeliTextBox.Text, KodeBarangTextBox.Text)
+                KodeBarangTextBox.Focus()
+                KodeBarangTextBox.Text = ""
+                JumlahBeliTextBox.Text = "1"
+                btnenable()
+            End If
         End If
     End Sub
 
@@ -101,6 +108,7 @@
             btnHapus.Enabled = True
             btnBayar.Enabled = True
         End If
+        ambiltransaksi(NoTransaksiTextBox.Text)
     End Sub
 
     Private Sub btnHapus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnHapus.Click
@@ -153,5 +161,34 @@
         ' Draw row number
         e.Graphics.DrawString(rowNumber, dg.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
 
+    End Sub
+
+    Private Sub Panel4_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles Panel4.Paint
+
+    End Sub
+
+    Private Sub KodeBarangTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KodeBarangTextBox.TextChanged
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        NoTransaksiTextBox.ReadOnly = False
+    End Sub
+    Public Sub ambiltransaksi(ByVal no As String)
+        GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, no)
+    End Sub
+    Private Sub NoTransaksiTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles NoTransaksiTextBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            'GridPenjualanTableAdapter .GetDataByTransaksi (NoTransaksiTextBox .Text )
+            GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
+        End If
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        DialogPenjualan.ShowDialog()
+    End Sub
+
+    Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
+        DialogBayar.ShowDialog()
     End Sub
 End Class

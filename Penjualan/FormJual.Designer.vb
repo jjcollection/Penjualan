@@ -31,11 +31,6 @@ Partial Class FormJual
         Dim Label6 As System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.btnHapus = New System.Windows.Forms.Button()
-        Me.btnBayar = New System.Windows.Forms.Button()
-        Me.btnTransaksiBaru = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PenjualanDetilDataGridView = New System.Windows.Forms.DataGridView()
         Me.idPenjulanDetil = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,8 +56,6 @@ Partial Class FormJual
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.LabelInfo = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PenjualanMasterPenjualanDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PenjualanMasterBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PenjualanDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridPenjualanTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridPenjualanTableAdapter()
@@ -71,6 +64,15 @@ Partial Class FormJual
         Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
         Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
         Me.PenjualanDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PenjualanDetilTableAdapter()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.btnHapus = New System.Windows.Forms.Button()
+        Me.btnBayar = New System.Windows.Forms.Button()
+        Me.btnTransaksiBaru = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PenjualanMasterPenjualanDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         NoTransaksiLabel = New System.Windows.Forms.Label()
         JumlahBeliLabel = New System.Windows.Forms.Label()
         KodeBarangLabel = New System.Windows.Forms.Label()
@@ -89,10 +91,10 @@ Partial Class FormJual
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.PenjualanMasterPenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PenjualanMasterBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PenjualanMasterPenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NoTransaksiLabel
@@ -182,90 +184,6 @@ Partial Class FormJual
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(251, 48)
         Me.Panel2.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.Black
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Image = Global.Penjualan.My.Resources.Resources.Menu_White
-        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(249, 46)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "MENU"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Image = Global.Penjualan.My.Resources.Resources.Shutdown_32px
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(7, 210)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(251, 47)
-        Me.Button6.TabIndex = 0
-        Me.Button6.Text = "Keluar"
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'btnHapus
-        '
-        Me.btnHapus.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnHapus.FlatAppearance.BorderSize = 0
-        Me.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHapus.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHapus.ForeColor = System.Drawing.Color.White
-        Me.btnHapus.Image = Global.Penjualan.My.Resources.Resources.Trash_Can_32px
-        Me.btnHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHapus.Location = New System.Drawing.Point(7, 114)
-        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(251, 47)
-        Me.btnHapus.TabIndex = 0
-        Me.btnHapus.Text = "Hapus"
-        Me.btnHapus.UseVisualStyleBackColor = False
-        '
-        'btnBayar
-        '
-        Me.btnBayar.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnBayar.FlatAppearance.BorderSize = 0
-        Me.btnBayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBayar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBayar.ForeColor = System.Drawing.Color.White
-        Me.btnBayar.Image = Global.Penjualan.My.Resources.Resources.Money_32px
-        Me.btnBayar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBayar.Location = New System.Drawing.Point(7, 162)
-        Me.btnBayar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnBayar.Name = "btnBayar"
-        Me.btnBayar.Size = New System.Drawing.Size(251, 47)
-        Me.btnBayar.TabIndex = 0
-        Me.btnBayar.Text = "Bayar"
-        Me.btnBayar.UseVisualStyleBackColor = False
-        '
-        'btnTransaksiBaru
-        '
-        Me.btnTransaksiBaru.BackColor = System.Drawing.Color.DodgerBlue
-        Me.btnTransaksiBaru.FlatAppearance.BorderSize = 0
-        Me.btnTransaksiBaru.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTransaksiBaru.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTransaksiBaru.ForeColor = System.Drawing.Color.White
-        Me.btnTransaksiBaru.Image = Global.Penjualan.My.Resources.Resources.Plus_Math_32px
-        Me.btnTransaksiBaru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTransaksiBaru.Location = New System.Drawing.Point(7, 66)
-        Me.btnTransaksiBaru.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btnTransaksiBaru.Name = "btnTransaksiBaru"
-        Me.btnTransaksiBaru.Size = New System.Drawing.Size(251, 47)
-        Me.btnTransaksiBaru.TabIndex = 0
-        Me.btnTransaksiBaru.Text = "Transaksi Baru"
-        Me.btnTransaksiBaru.UseVisualStyleBackColor = False
         '
         'Panel4
         '
@@ -373,6 +291,8 @@ Partial Class FormJual
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel5.Controls.Add(Me.Button2)
+        Me.Panel5.Controls.Add(Me.Button1)
         Me.Panel5.Controls.Add(Me.KodeBarangTextBox)
         Me.Panel5.Controls.Add(Me.JumlahBeliTextBox)
         Me.Panel5.Controls.Add(Label6)
@@ -414,7 +334,7 @@ Partial Class FormJual
         Me.NoTransaksiTextBox.Location = New System.Drawing.Point(145, 25)
         Me.NoTransaksiTextBox.Name = "NoTransaksiTextBox"
         Me.NoTransaksiTextBox.ReadOnly = True
-        Me.NoTransaksiTextBox.Size = New System.Drawing.Size(340, 28)
+        Me.NoTransaksiTextBox.Size = New System.Drawing.Size(236, 28)
         Me.NoTransaksiTextBox.TabIndex = 4
         Me.NoTransaksiTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -551,27 +471,6 @@ Partial Class FormJual
         Me.Panel3.Size = New System.Drawing.Size(829, 59)
         Me.Panel3.TabIndex = 11
         '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.Black
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Add_Shopping_Cart_64px
-        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(827, 57)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "APLIKASI PENJUALAN MITRA RAYA"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PenjualanMasterPenjualanDetilBindingSource
-        '
-        Me.PenjualanMasterPenjualanDetilBindingSource.DataMember = "PenjualanMasterPenjualanDetil"
-        Me.PenjualanMasterPenjualanDetilBindingSource.DataSource = Me.PenjualanMasterBindingSource
-        '
         'PenjualanMasterBindingSource
         '
         Me.PenjualanMasterBindingSource.DataMember = "PenjualanMaster"
@@ -606,6 +505,7 @@ Partial Class FormJual
         Me.TableAdapterManager.JenisTableAdapter = Nothing
         Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
         Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
+        Me.TableAdapterManager.PengaturanTableAdapter = Nothing
         Me.TableAdapterManager.PenjualanDetilTableAdapter = Me.PenjualanDetilTableAdapter
         Me.TableAdapterManager.PenjualanMasterTableAdapter = Me.PenjualanMasterTableAdapter
         Me.TableAdapterManager.SupplierTableAdapter = Nothing
@@ -614,6 +514,135 @@ Partial Class FormJual
         'PenjualanDetilTableAdapter
         '
         Me.PenjualanDetilTableAdapter.ClearBeforeFill = True
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Black
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Image = Global.Penjualan.My.Resources.Resources.Menu_White
+        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(249, 46)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "MENU"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button6.FlatAppearance.BorderSize = 0
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.White
+        Me.Button6.Image = Global.Penjualan.My.Resources.Resources.Shutdown_32px
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(7, 210)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(251, 47)
+        Me.Button6.TabIndex = 0
+        Me.Button6.Text = "Keluar"
+        Me.Button6.UseVisualStyleBackColor = False
+        '
+        'btnHapus
+        '
+        Me.btnHapus.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnHapus.FlatAppearance.BorderSize = 0
+        Me.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHapus.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHapus.ForeColor = System.Drawing.Color.White
+        Me.btnHapus.Image = Global.Penjualan.My.Resources.Resources.Trash_Can_32px
+        Me.btnHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHapus.Location = New System.Drawing.Point(7, 114)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnHapus.Name = "btnHapus"
+        Me.btnHapus.Size = New System.Drawing.Size(251, 47)
+        Me.btnHapus.TabIndex = 0
+        Me.btnHapus.Text = "Hapus"
+        Me.btnHapus.UseVisualStyleBackColor = False
+        '
+        'btnBayar
+        '
+        Me.btnBayar.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnBayar.FlatAppearance.BorderSize = 0
+        Me.btnBayar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBayar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBayar.ForeColor = System.Drawing.Color.White
+        Me.btnBayar.Image = Global.Penjualan.My.Resources.Resources.Money_32px
+        Me.btnBayar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBayar.Location = New System.Drawing.Point(7, 162)
+        Me.btnBayar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnBayar.Name = "btnBayar"
+        Me.btnBayar.Size = New System.Drawing.Size(251, 47)
+        Me.btnBayar.TabIndex = 0
+        Me.btnBayar.Text = "Bayar"
+        Me.btnBayar.UseVisualStyleBackColor = False
+        '
+        'btnTransaksiBaru
+        '
+        Me.btnTransaksiBaru.BackColor = System.Drawing.Color.DodgerBlue
+        Me.btnTransaksiBaru.FlatAppearance.BorderSize = 0
+        Me.btnTransaksiBaru.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTransaksiBaru.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTransaksiBaru.ForeColor = System.Drawing.Color.White
+        Me.btnTransaksiBaru.Image = Global.Penjualan.My.Resources.Resources.Plus_Math_32px
+        Me.btnTransaksiBaru.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTransaksiBaru.Location = New System.Drawing.Point(7, 66)
+        Me.btnTransaksiBaru.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btnTransaksiBaru.Name = "btnTransaksiBaru"
+        Me.btnTransaksiBaru.Size = New System.Drawing.Size(251, 47)
+        Me.btnTransaksiBaru.TabIndex = 0
+        Me.btnTransaksiBaru.Text = "Transaksi Baru"
+        Me.btnTransaksiBaru.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Purchase_Order_16px
+        Me.Button2.Location = New System.Drawing.Point(438, 25)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(47, 28)
+        Me.Button2.TabIndex = 9
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = Global.Penjualan.My.Resources.Resources.Reset_16px_green
+        Me.Button1.Location = New System.Drawing.Point(387, 25)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(47, 28)
+        Me.Button1.TabIndex = 9
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.Black
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Add_Shopping_Cart_64px
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(827, 57)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "APLIKASI PENJUALAN MITRA RAYA"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PenjualanMasterPenjualanDetilBindingSource
+        '
+        Me.PenjualanMasterPenjualanDetilBindingSource.DataMember = "PenjualanMasterPenjualanDetil"
+        Me.PenjualanMasterPenjualanDetilBindingSource.DataSource = Me.PenjualanMasterBindingSource
         '
         'FormJual
         '
@@ -642,10 +671,10 @@ Partial Class FormJual
         Me.Panel8.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        CType(Me.PenjualanMasterPenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PenjualanMasterBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PenjualanMasterPenjualanDetilBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -691,4 +720,6 @@ Partial Class FormJual
     Friend WithEvents HargaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents JumlahBeliDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SubTotalDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

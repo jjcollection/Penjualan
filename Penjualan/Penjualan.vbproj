@@ -67,10 +67,14 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -90,6 +94,18 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DialogBayar.Designer.vb">
+      <DependentUpon>DialogBayar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBayar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogPenjualan.Designer.vb">
+      <DependentUpon>DialogPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DialogPenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DialogPO.Designer.vb">
       <DependentUpon>DialogPO.vb</DependentUpon>
     </Compile>
@@ -125,6 +141,12 @@
       <DependentUpon>FormPembelian.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportBarang.Designer.vb">
+      <DependentUpon>FormReportBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportBarang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSupplier.Designer.vb">
@@ -170,6 +192,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DialogBayar.resx">
+      <DependentUpon>DialogBayar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogPenjualan.resx">
+      <DependentUpon>DialogPenjualan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogPO.resx">
       <DependentUpon>DialogPO.vb</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +216,9 @@
     <EmbeddedResource Include="FormPembelian.resx">
       <DependentUpon>FormPembelian.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReportBarang.resx">
+      <DependentUpon>FormReportBarang.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier.resx">
       <DependentUpon>FormSupplier.vb</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +234,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportBarang.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -376,6 +408,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward Button_16px+green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reset_16px_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back Arrow_16px+green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Purchase Order_16px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

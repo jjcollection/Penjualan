@@ -43,21 +43,21 @@ Public Class FormPembelian
 
     Private Sub FormPembelian_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         tampilPemesanan(NoTransaksiTextBox.Text)
-        '  GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
+        GridPembelianTableAdapter.FillByNoPembelian(PenjualanDataSet.gridPembelian, NoTransaksiTextBox.Text)
         Me.SupplierTableAdapter.Fill(Me.PenjualanDataSet.Supplier)
-        Dim Conn = New OleDbConnection(My.Settings.penjualanConnectionString)
-        Dim CMD = New OleDbCommand("SELECT * from Barang", Conn)
-        Dim RD As OleDbDataReader
-        Conn.Open()
-        RD = CMD.ExecuteReader
-        While RD.Read
-            With KodeBarangTextBox
-                .AutoCompleteCustomSource.Add(RD("kodeBarang").ToString)
-                .AutoCompleteMode = AutoCompleteMode.Suggest
-                .AutoCompleteSource = AutoCompleteSource.CustomSource
-            End With
-        End While
-        Conn.Close()
+        'Dim Conn = New OleDbConnection(My.Settings.penjualanConnectionString)
+        'Dim CMD = New OleDbCommand("SELECT * from Barang", Conn)
+        'Dim RD As OleDbDataReader
+        'Conn.Open()
+        'RD = CMD.ExecuteReader
+        'While RD.Read
+        '    With KodeBarangTextBox
+        '        .AutoCompleteCustomSource.Add(RD("kodeBarang").ToString)
+        '        ' .AutoCompleteMode = AutoCompleteMode.Suggest
+        '        '.AutoCompleteSource = AutoCompleteSource.CustomSource
+        '    End With
+        'End While
+        'Conn.Close()
         kode_otomatis()
         PembelianMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, IdSupplierComboBox.SelectedValue, Date.Now, 0, 0)
         KodeBarangTextBox.Focus()
@@ -251,42 +251,5 @@ Public Class FormPembelian
             GC.Collect()
         End Try
     End Sub
-    Private Sub DATAGRIDVIEW_TO_EXCEL(ByVal DGV As DataGridView)
-        Try
-            Dim DTB = New DataTable, RWS As Integer, CLS As Integer
-
-            For CLS = 0 To DGV.ColumnCount - 1 ' COLUMNS OF DTB
-                DTB.Columns.Add(DGV.Columns(CLS).Name.ToString)
-            Next
-
-            Dim DRW As DataRow
-
-            For RWS = 0 To DGV.Rows.Count - 1 ' FILL DTB WITH DATAGRIDVIEW
-                DRW = DTB.NewRow
-
-                For CLS = 0 To DGV.ColumnCount - 1
-                    Try
-                        DRW(DTB.Columns(CLS).ColumnName.ToString) = DGV.Rows(RWS).Cells(CLS).Value.ToString
-                    Catch ex As Exception
-
-                    End Try
-                Next
-
-                DTB.Rows.Add(DRW)
-            Next
-
-            DTB.AcceptChanges()
-
-            Dim DST As New DataSet
-            DST.Tables.Add(DTB)
-            Dim FLE As String = "" ' PATH AND FILE NAME WHERE THE XML WIL BE CREATED (EXEMPLE: C:\REPS\XML.xml)
-            DTB.WriteXml(FLE)
-            Dim EXL As String = "" ' PATH OF/ EXCEL.EXE IN YOUR MICROSOFT OFFICE
-            Shell(Chr(34) & EXL & Chr(34) & " " & Chr(34) & FLE & Chr(34), vbNormalFocus) ' OPEN XML WITH EXCEL
-
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-    End Sub
+    
 End Class

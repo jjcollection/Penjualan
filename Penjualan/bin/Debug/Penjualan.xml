@@ -19,6 +19,10 @@ Penjualan
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Back_Arrow_16px_green">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Back_Arrow_32px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -40,6 +44,10 @@ Penjualan
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Eraser_32px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Forward_Button_16px_green">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -91,7 +99,15 @@ Penjualan
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Purchase_Order_16px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Penjualan.My.Resources.Resources.Reset_16px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Penjualan.My.Resources.Resources.Reset_16px_green">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -187,6 +203,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Penjualan.penjualanDataSet.PengaturanDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Penjualan.penjualanDataSet.BarangRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -231,6 +251,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Penjualan.penjualanDataSet.PengaturanRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Penjualan.penjualanDataSet.BarangRowChangeEvent">
 	<summary>
 Row event argument class
@@ -272,6 +296,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:Penjualan.penjualanDataSet.gridSupplierRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Penjualan.penjualanDataSet.PengaturanRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -320,6 +348,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:Penjualan.penjualanDataSetTableAdapters.gridSupplierTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:Penjualan.penjualanDataSetTableAdapters.PengaturanTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

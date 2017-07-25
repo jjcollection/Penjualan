@@ -45,6 +45,7 @@ Partial Class FormBarang
         Me.btnKeluar = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.btnHapus = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.btnUbah = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -63,19 +64,19 @@ Partial Class FormBarang
         Me.HargaTextBox = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.BarangDataGridView = New System.Windows.Forms.DataGridView()
-        Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaJenisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SatuanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StokDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GridBarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
         Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
         Me.JenisTableAdapter = New Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter()
         Me.GridBarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaJenisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.hargaBeli = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SatuanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StokDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         KodeBarangLabel = New System.Windows.Forms.Label()
         IdJenisLabel = New System.Windows.Forms.Label()
         NamaBarangLabel = New System.Windows.Forms.Label()
@@ -327,7 +328,7 @@ Partial Class FormBarang
         Me.btnKeluar.ForeColor = System.Drawing.Color.White
         Me.btnKeluar.Image = Global.Penjualan.My.Resources.Resources.Shutdown_32px
         Me.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnKeluar.Location = New System.Drawing.Point(8, 268)
+        Me.btnKeluar.Location = New System.Drawing.Point(7, 301)
         Me.btnKeluar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnKeluar.Name = "btnKeluar"
         Me.btnKeluar.Size = New System.Drawing.Size(251, 47)
@@ -344,7 +345,7 @@ Partial Class FormBarang
         Me.btnSimpan.ForeColor = System.Drawing.Color.White
         Me.btnSimpan.Image = Global.Penjualan.My.Resources.Resources.Save_32px
         Me.btnSimpan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSimpan.Location = New System.Drawing.Point(8, 112)
+        Me.btnSimpan.Location = New System.Drawing.Point(7, 109)
         Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(251, 47)
@@ -361,13 +362,30 @@ Partial Class FormBarang
         Me.btnHapus.ForeColor = System.Drawing.Color.White
         Me.btnHapus.Image = Global.Penjualan.My.Resources.Resources.Trash_Can_32px
         Me.btnHapus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHapus.Location = New System.Drawing.Point(8, 216)
+        Me.btnHapus.Location = New System.Drawing.Point(7, 205)
         Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(251, 47)
         Me.btnHapus.TabIndex = 0
         Me.btnHapus.Text = "Hapus"
         Me.btnHapus.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Image = Global.Penjualan.My.Resources.Resources.Printer_Maintenance_32px
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(7, 253)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(251, 47)
+        Me.Button3.TabIndex = 0
+        Me.Button3.Text = "Cetak"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'btnUbah
         '
@@ -378,7 +396,7 @@ Partial Class FormBarang
         Me.btnUbah.ForeColor = System.Drawing.Color.White
         Me.btnUbah.Image = Global.Penjualan.My.Resources.Resources.Edit_32px
         Me.btnUbah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnUbah.Location = New System.Drawing.Point(8, 164)
+        Me.btnUbah.Location = New System.Drawing.Point(7, 157)
         Me.btnUbah.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnUbah.Name = "btnUbah"
         Me.btnUbah.Size = New System.Drawing.Size(251, 47)
@@ -395,7 +413,7 @@ Partial Class FormBarang
         Me.btnTambah.ForeColor = System.Drawing.Color.White
         Me.btnTambah.Image = Global.Penjualan.My.Resources.Resources.Plus_Math_32px
         Me.btnTambah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTambah.Location = New System.Drawing.Point(8, 60)
+        Me.btnTambah.Location = New System.Drawing.Point(7, 61)
         Me.btnTambah.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnTambah.Name = "btnTambah"
         Me.btnTambah.Size = New System.Drawing.Size(251, 47)
@@ -588,7 +606,7 @@ Partial Class FormBarang
         Me.BarangDataGridView.AllowUserToDeleteRows = False
         Me.BarangDataGridView.AutoGenerateColumns = False
         Me.BarangDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BarangDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KodeBarangDataGridViewTextBoxColumn, Me.NamaBarangDataGridViewTextBoxColumn, Me.NamaJenisDataGridViewTextBoxColumn, Me.HargaDataGridViewTextBoxColumn, Me.SatuanDataGridViewTextBoxColumn, Me.StokDataGridViewTextBoxColumn})
+        Me.BarangDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.KodeBarangDataGridViewTextBoxColumn, Me.NamaBarangDataGridViewTextBoxColumn, Me.NamaJenisDataGridViewTextBoxColumn, Me.hargaBeli, Me.HargaDataGridViewTextBoxColumn, Me.SatuanDataGridViewTextBoxColumn, Me.StokDataGridViewTextBoxColumn})
         Me.BarangDataGridView.DataSource = Me.GridBarangBindingSource
         Me.BarangDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BarangDataGridView.Location = New System.Drawing.Point(0, 0)
@@ -597,52 +615,6 @@ Partial Class FormBarang
         Me.BarangDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.BarangDataGridView.Size = New System.Drawing.Size(856, 446)
         Me.BarangDataGridView.TabIndex = 10
-        '
-        'KodeBarangDataGridViewTextBoxColumn
-        '
-        Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
-        Me.KodeBarangDataGridViewTextBoxColumn.HeaderText = "Kode Barang"
-        Me.KodeBarangDataGridViewTextBoxColumn.Name = "KodeBarangDataGridViewTextBoxColumn"
-        Me.KodeBarangDataGridViewTextBoxColumn.ReadOnly = True
-        Me.KodeBarangDataGridViewTextBoxColumn.Width = 180
-        '
-        'NamaBarangDataGridViewTextBoxColumn
-        '
-        Me.NamaBarangDataGridViewTextBoxColumn.DataPropertyName = "namaBarang"
-        Me.NamaBarangDataGridViewTextBoxColumn.HeaderText = "Nama Barang"
-        Me.NamaBarangDataGridViewTextBoxColumn.Name = "NamaBarangDataGridViewTextBoxColumn"
-        Me.NamaBarangDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NamaBarangDataGridViewTextBoxColumn.Width = 250
-        '
-        'NamaJenisDataGridViewTextBoxColumn
-        '
-        Me.NamaJenisDataGridViewTextBoxColumn.DataPropertyName = "namaJenis"
-        Me.NamaJenisDataGridViewTextBoxColumn.HeaderText = "Jenis"
-        Me.NamaJenisDataGridViewTextBoxColumn.Name = "NamaJenisDataGridViewTextBoxColumn"
-        Me.NamaJenisDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'HargaDataGridViewTextBoxColumn
-        '
-        Me.HargaDataGridViewTextBoxColumn.DataPropertyName = "harga"
-        Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga"
-        Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
-        Me.HargaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.HargaDataGridViewTextBoxColumn.Width = 180
-        '
-        'SatuanDataGridViewTextBoxColumn
-        '
-        Me.SatuanDataGridViewTextBoxColumn.DataPropertyName = "satuan"
-        Me.SatuanDataGridViewTextBoxColumn.HeaderText = "Satuan"
-        Me.SatuanDataGridViewTextBoxColumn.Name = "SatuanDataGridViewTextBoxColumn"
-        Me.SatuanDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SatuanDataGridViewTextBoxColumn.Width = 180
-        '
-        'StokDataGridViewTextBoxColumn
-        '
-        Me.StokDataGridViewTextBoxColumn.DataPropertyName = "stok"
-        Me.StokDataGridViewTextBoxColumn.HeaderText = "Stok"
-        Me.StokDataGridViewTextBoxColumn.Name = "StokDataGridViewTextBoxColumn"
-        Me.StokDataGridViewTextBoxColumn.ReadOnly = True
         '
         'GridBarangBindingSource
         '
@@ -665,6 +637,7 @@ Partial Class FormBarang
         Me.TableAdapterManager.JenisTableAdapter = Me.JenisTableAdapter
         Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
         Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
+        Me.TableAdapterManager.PengaturanTableAdapter = Nothing
         Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
         Me.TableAdapterManager.PenjualanMasterTableAdapter = Nothing
         Me.TableAdapterManager.SupplierTableAdapter = Nothing
@@ -678,22 +651,58 @@ Partial Class FormBarang
         '
         Me.GridBarangTableAdapter.ClearBeforeFill = True
         '
-        'Button3
+        'KodeBarangDataGridViewTextBoxColumn
         '
-        Me.Button3.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Image = Global.Penjualan.My.Resources.Resources.Edit_32px
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(16, 344)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(251, 47)
-        Me.Button3.TabIndex = 0
-        Me.Button3.Text = "Ubah"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
+        Me.KodeBarangDataGridViewTextBoxColumn.HeaderText = "Kode "
+        Me.KodeBarangDataGridViewTextBoxColumn.Name = "KodeBarangDataGridViewTextBoxColumn"
+        Me.KodeBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.KodeBarangDataGridViewTextBoxColumn.Width = 120
+        '
+        'NamaBarangDataGridViewTextBoxColumn
+        '
+        Me.NamaBarangDataGridViewTextBoxColumn.DataPropertyName = "namaBarang"
+        Me.NamaBarangDataGridViewTextBoxColumn.HeaderText = "Nama Barang"
+        Me.NamaBarangDataGridViewTextBoxColumn.Name = "NamaBarangDataGridViewTextBoxColumn"
+        Me.NamaBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NamaBarangDataGridViewTextBoxColumn.Width = 300
+        '
+        'NamaJenisDataGridViewTextBoxColumn
+        '
+        Me.NamaJenisDataGridViewTextBoxColumn.DataPropertyName = "namaJenis"
+        Me.NamaJenisDataGridViewTextBoxColumn.HeaderText = "Jenis"
+        Me.NamaJenisDataGridViewTextBoxColumn.Name = "NamaJenisDataGridViewTextBoxColumn"
+        Me.NamaJenisDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'hargaBeli
+        '
+        Me.hargaBeli.DataPropertyName = "hargaBeli"
+        Me.hargaBeli.HeaderText = "Harga Beli"
+        Me.hargaBeli.Name = "hargaBeli"
+        Me.hargaBeli.ReadOnly = True
+        Me.hargaBeli.Width = 150
+        '
+        'HargaDataGridViewTextBoxColumn
+        '
+        Me.HargaDataGridViewTextBoxColumn.DataPropertyName = "harga"
+        Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga Jual"
+        Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
+        Me.HargaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.HargaDataGridViewTextBoxColumn.Width = 150
+        '
+        'SatuanDataGridViewTextBoxColumn
+        '
+        Me.SatuanDataGridViewTextBoxColumn.DataPropertyName = "satuan"
+        Me.SatuanDataGridViewTextBoxColumn.HeaderText = "Satuan"
+        Me.SatuanDataGridViewTextBoxColumn.Name = "SatuanDataGridViewTextBoxColumn"
+        Me.SatuanDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StokDataGridViewTextBoxColumn
+        '
+        Me.StokDataGridViewTextBoxColumn.DataPropertyName = "stok"
+        Me.StokDataGridViewTextBoxColumn.HeaderText = "Stok"
+        Me.StokDataGridViewTextBoxColumn.Name = "StokDataGridViewTextBoxColumn"
+        Me.StokDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormBarang
         '
@@ -758,12 +767,13 @@ Partial Class FormBarang
     Friend WithEvents JenisBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents GridBarangBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents GridBarangTableAdapter As Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter
+    Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents KodeBarangDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NamaBarangDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NamaJenisDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents hargaBeli As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents HargaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SatuanDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents StokDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button3 As System.Windows.Forms.Button
 
 End Class

@@ -65,35 +65,36 @@
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        Dim xlApp As Microsoft.Office.Interop.Excel.Application
-        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
-        Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
-        Dim misValue As Object = System.Reflection.Missing.Value
-        Dim i As Integer
-        Dim j As Integer
-        xlApp = New Microsoft.Office.Interop.Excel.Application
-        xlWorkBook = xlApp.Workbooks.Add(misValue)
-        xlWorkSheet = xlWorkBook.Sheets("sheet1")
-        xlWorkSheet.Columns.AutoFit()
+        'Dim xlApp As Microsoft.Office.Interop.Excel.Application
+        'Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+        'Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+        'Dim misValue As Object = System.Reflection.Missing.Value
+        'Dim i As Integer
+        'Dim j As Integer
+        'xlApp = New Microsoft.Office.Interop.Excel.Application
+        'xlWorkBook = xlApp.Workbooks.Add(misValue)
+        'xlWorkSheet = xlWorkBook.Sheets("sheet1")
+        'xlWorkSheet.Columns.AutoFit()
 
-        For i = 0 To (BarangDataGridView.RowCount + 1) - 2
-            For j = 0 To BarangDataGridView.ColumnCount - 1
-                For k As Integer = 1 To BarangDataGridView.Columns.Count
-                    xlWorkSheet.Cells(1, k) = BarangDataGridView.Columns(k - 1).HeaderText
-                    xlWorkSheet.Cells(i + 2, j + 1) = BarangDataGridView(j, i).Value.ToString()
-                Next
-            Next
-        Next
+        'For i = 0 To (BarangDataGridView.RowCount + 1) - 2
+        '    For j = 0 To BarangDataGridView.ColumnCount - 1
+        '        For k As Integer = 1 To BarangDataGridView.Columns.Count
+        '            xlWorkSheet.Cells(1, k) = BarangDataGridView.Columns(k - 1).HeaderText
+        '            xlWorkSheet.Cells(i + 2, j + 1) = BarangDataGridView(j, i).Value.ToString()
+        '        Next
+        '    Next
+        'Next
 
-        xlWorkSheet.SaveAs("D:\vbexcel.xlsx")
-        xlWorkBook.Close()
-        xlApp.Quit()
+        'xlWorkSheet.SaveAs("D:\vbexcel.xlsx")
+        'xlWorkBook.Close()
+        'xlApp.Quit()
 
-        releaseObject(xlApp)
-        releaseObject(xlWorkBook)
-        releaseObject(xlWorkSheet)
+        'releaseObject(xlApp)
+        'releaseObject(xlWorkBook)
+        'releaseObject(xlWorkSheet)
 
-        MsgBox("You can find the file D:\vbexcel.xlsx")
+        'MsgBox("You can find the file D:\vbexcel.xlsx")
+        FormReportBarang.Show()
     End Sub
     Private Sub releaseObject(ByVal obj As Object)
         Try
