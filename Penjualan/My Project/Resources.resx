@@ -217,6 +217,9 @@
   <data name="Forward_Button_16px_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Forward Button_16px+green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Happy_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Purchase_Order_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Purchase Order_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

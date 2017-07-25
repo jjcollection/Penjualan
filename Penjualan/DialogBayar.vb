@@ -13,13 +13,28 @@ Public Class DialogBayar
     End Sub
 
     Private Sub DialogBayar_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        txtBayar.Text = ""
-        txtBayar.Focus()
+        fokuskan()
     End Sub
 
     Private Sub TextBox1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtBayar.KeyDown
         If e.KeyCode = Keys.Enter Then
-            MsgBox("terimakasih")
+            Try
+                Dim kembali = CDbl(txtBayar.Text) - CDbl(lbTotal.Text)
+                lbKembali.Text = Format(kembali, "Currency")
+                txtBayar.Text = Format(txtBayar.Text, "Currency")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         End If
+    End Sub
+
+    Public Sub fokuskan()
+        txtBayar.Text = ""
+        txtBayar.Focus()
+
+    End Sub
+  
+    Private Sub txtBayar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBayar.TextChanged
+        
     End Sub
 End Class

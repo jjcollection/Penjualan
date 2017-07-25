@@ -86,7 +86,7 @@
                 Dim totalbelanja = PenjualanDetilTableAdapter.subtotal(NoTransaksiTextBox.Text)
                 Dim totalItem = PenjualanDetilTableAdapter.jmlitem(NoTransaksiTextBox.Text)
 
-                lbTotal.Text = totalbelanja
+                lbTotal.Text = Format(totalbelanja, "Currency")
                 lbitem.Text = "Item :" & totalItem
                 lbTanggal.Text = Date.Today.Date
                 PenjualanMasterTableAdapter.UpdateTotal(totalItem, totalbelanja, NoTransaksiTextBox.Text)
@@ -189,6 +189,8 @@
     End Sub
 
     Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
+        DialogBayar.lbTotal.Text = lbTotal.Text
+        DialogBayar.fokuskan()
         DialogBayar.ShowDialog()
     End Sub
 End Class
