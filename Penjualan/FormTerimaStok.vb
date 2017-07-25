@@ -1,5 +1,5 @@
 ﻿Public Class FormTerimaStok
-
+    Dim item As Double
     Private Sub FormTerimaStok_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'PenjualanDataSet.PembelianDetil' table. You can move, or remove it, as needed.
         Me.PembelianDetilTableAdapter.Fill(Me.PenjualanDataSet.PembelianDetil)
@@ -11,6 +11,7 @@
         Me.PembelianMasterTableAdapter.Fill(Me.PenjualanDataSet.PembelianMaster)
         'TODO: This line of code loads data into the 'PenjualanDataSet.gridPembelian' table. You can move, or remove it, as needed.
         tampilPemesanan(NoTransaksiTextBox.Text)
+        lbTanggal.Text = Date.Now.Date
 
     End Sub
     Public Sub tampilPemesanan(ByVal no As String)
@@ -37,8 +38,10 @@
 
     Private Sub btnSimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSimpan.Click
         For i As Integer = 0 To PenjualanDetilDataGridView.Rows.Count - 1
-            ' PembelianDetilTableAdapter  .UpdateQuer(NoTransaksiTextBox .Text ,
+            PembelianDetilTableAdapter.UpdatePenerimaan(Val(PenjualanDetilDataGridView.Rows(i).Cells(5).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(7).Value), Val(PenjualanDetilDataGridView.Rows(i).Cells(6).Value), PenjualanDetilDataGridView.Rows(i).Cells(0).Value)
         Next
+        PembelianMasterTableAdapter.UpdateQuery(NoTransaksiTextBox.Text, item, lbTotal.Text, NoTransaksiTextBox.Text)
+        MsgBox("Data telah disimpan", MsgBoxStyle.Information, "Informasi")
     End Sub
 
     Private Sub KodeBarangTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KodeBarangTextBox.TextChanged
@@ -53,7 +56,42 @@
             'PenjualanDetilDataGridView.CurrentCell = PenjualanDetilDataGridView.Rows(NewRow).Cells(PenjualanDetilDataGridView.CurrentCell.ColumnIndex)
         ElseIf e.ColumnIndex = 6 Then
             PenjualanDetilDataGridView.Rows(e.RowIndex).Cells(7).Value = Val(PenjualanDetilDataGridView.Rows(e.RowIndex).Cells(5).Value) * Val(PenjualanDetilDataGridView.Rows(e.RowIndex).Cells(6).Value)
+            hitungsummary()
+            hitungItem()
         End If
+    End Sub
+    Public Sub hitungsummary()
+        Dim qry0 = From theRow As DataGridViewRow In PenjualanDetilDataGridView.Rows Select theRow
+        Dim sumBeli As Double
+        sumBeli = qry0.Sum(Function(x As DataGridViewRow) CDec(x.Cells(7).Value))
+        lbTotal.Text = Format(sumBeli, "Currency")
+    End Sub
+    Public Sub hitungItem()
+        item = PenjualanDetilDataGridView.Rows.Count
+        lbitem.Text = "Item : " & Format(item, "0.###")
+    End Sub
+
+    Private Sub PenjualanDetilDataGridView_RowPostPaint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewRowPostPaintEventArgs) Handles PenjualanDetilDataGridView.RowPostPaint
+        Dim dg As DataGridView = DirectCast(sender, DataGridView)
+        ' Current row record
+        Dim rowNumber As String = (e.RowIndex + 1).ToString()
+
+        ' Format row based on number of records displayed by using leading zeros
+        While rowNumber.Length < dg.RowCount.ToString().Length
+            rowNumber = "0" & rowNumber
+        End While
+
+        ' Position text
+        Dim size As SizeF = e.Graphics.MeasureString(rowNumber, Me.Font)
+        If dg.RowHeadersWidth < CInt(size.Width + 20) Then
+            dg.RowHeadersWidth = CInt(size.Width + 20)
+        End If
+
+        ' Use default system text brush
+        Dim b As Brush = SystemBrushes.ControlText
+
+        ' Draw row number
+        e.Graphics.DrawString(rowNumber, dg.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
 
     End Sub
 End Class

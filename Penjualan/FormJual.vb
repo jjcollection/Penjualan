@@ -3,6 +3,7 @@
     Dim tgl, tahun, digit, kodebr As String
     Dim subtotal, hargabr As Double
     Sub kode_otomatis()
+        PenjualanMasterTableAdapter.DeletePenjualanMasterNol()
         tgl = Date.Now.Day
         tahun = Date.Now.Year
         digit = Microsoft.VisualBasic.Right(tahun, 2)
@@ -32,6 +33,7 @@
 
     Private Sub btnTransaksiBaru_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTransaksiBaru.Click
         Try
+
             kode_otomatis()
             PenjualanMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, Date.Now, 0, 0)
             GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
@@ -127,5 +129,29 @@
             LabelInfo.Text = "-"
             NoTransaksiTextBox.Text = "-"
         End Try
+    End Sub
+
+    Private Sub PenjualanDetilDataGridView_RowPostPaint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewRowPostPaintEventArgs) Handles PenjualanDetilDataGridView.RowPostPaint
+        Dim dg As DataGridView = DirectCast(sender, DataGridView)
+        ' Current row record
+        Dim rowNumber As String = (e.RowIndex + 1).ToString()
+
+        ' Format row based on number of records displayed by using leading zeros
+        While rowNumber.Length < dg.RowCount.ToString().Length
+            rowNumber = "0" & rowNumber
+        End While
+
+        ' Position text
+        Dim size As SizeF = e.Graphics.MeasureString(rowNumber, Me.Font)
+        If dg.RowHeadersWidth < CInt(size.Width + 20) Then
+            dg.RowHeadersWidth = CInt(size.Width + 20)
+        End If
+
+        ' Use default system text brush
+        Dim b As Brush = SystemBrushes.ControlText
+
+        ' Draw row number
+        e.Graphics.DrawString(rowNumber, dg.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
+
     End Sub
 End Class

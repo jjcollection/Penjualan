@@ -202,13 +202,13 @@
   <data name="Staff_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Staff_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Move Stock_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Move Stock_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Search_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Move Stock_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Move_Stock_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Move Stock_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Move_Stock_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Move Stock_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

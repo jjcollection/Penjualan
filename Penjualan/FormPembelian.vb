@@ -1,11 +1,13 @@
 ﻿Imports System.Data.OleDb
 
+
 Public Class FormPembelian
     Dim tbl As New DataTable
     Dim tgl, tahun, digit, kodebr As String
     Dim subtotal, hargabr As Double
     Dim total, item As Double
     Sub kode_otomatis()
+        PembelianMasterTableAdapter.DeleteBeliMasterNol()
         tgl = Date.Now.Day
         tahun = Date.Now.Year
         digit = Microsoft.VisualBasic.Right(tahun, 2)
@@ -31,6 +33,7 @@ Public Class FormPembelian
     End Sub
 
     Private Sub btnPemesananBaru_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPemesananBaru.Click
+
         kode_otomatis()
         PembelianMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, IdSupplierComboBox.SelectedValue, Date.Now, 0, 0)
         KodeBarangTextBox.Focus()
@@ -88,7 +91,7 @@ Public Class FormPembelian
         Catch ex As Exception
             MsgBox("Barang tidak ditemukan", MsgBoxStyle.Information, "info")
         End Try
-       
+
     End Sub
     Private Sub KodeBarangTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles KodeBarangTextBox.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -161,5 +164,129 @@ Public Class FormPembelian
 
     Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
         DialogPO.ShowDialog()
+    End Sub
+
+    Private Sub PenjualanDetilDataGridView_RowPostPaint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewRowPostPaintEventArgs) Handles PenjualanDetilDataGridView.RowPostPaint
+        Dim dg As DataGridView = DirectCast(sender, DataGridView)
+        ' Current row record
+        Dim rowNumber As String = (e.RowIndex + 1).ToString()
+
+        ' Format row based on number of records displayed by using leading zeros
+        While rowNumber.Length < dg.RowCount.ToString().Length
+            rowNumber = "0" & rowNumber
+        End While
+
+        ' Position text
+        Dim size As SizeF = e.Graphics.MeasureString(rowNumber, Me.Font)
+        If dg.RowHeadersWidth < CInt(size.Width + 20) Then
+            dg.RowHeadersWidth = CInt(size.Width + 20)
+        End If
+
+        ' Use default system text brush
+        Dim b As Brush = SystemBrushes.ControlText
+
+        ' Draw row number
+        e.Graphics.DrawString(rowNumber, dg.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
+
+    End Sub
+    Private Sub ExportToExcel()
+        ' Creating a Excel object.
+        Dim excel As Microsoft.Office.Interop.Excel._Application = New Microsoft.Office.Interop.Excel.Application()
+        Dim workbook As Microsoft.Office.Interop.Excel._Workbook = excel.Workbooks.Add(Type.Missing)
+        Dim worksheet As Microsoft.Office.Interop.Excel._Worksheet = Nothing
+
+        Try
+
+            worksheet = workbook.ActiveSheet
+
+            worksheet.Name = "ExportedFromDatGrid"
+
+            Dim cellRowIndex As Integer = 1
+            Dim cellColumnIndex As Integer = 1
+
+            'Loop through each row and read value from each column.
+            For i As Integer = 0 To (PenjualanDetilDataGridView.Rows.Count + 2) - 2
+                For j As Integer = 0 To PenjualanDetilDataGridView.Columns.Count - 1
+                    ' Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
+                    If cellRowIndex = 1 Then
+                        worksheet.Cells(cellRowIndex, cellColumnIndex) = PenjualanDetilDataGridView.Columns(j).HeaderText
+                    Else
+                        worksheet.Cells(cellRowIndex, cellColumnIndex) = PenjualanDetilDataGridView.Rows(i).Cells(j).Value.ToString()
+                    End If
+                    cellColumnIndex += 1
+                Next
+                cellColumnIndex = 1
+                cellRowIndex += 1
+            Next
+
+            'Getting the location and file name of the excel to save from user.
+            Dim saveDialog As New SaveFileDialog()
+            saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*"
+            saveDialog.FilterIndex = 2
+
+            If saveDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                workbook.SaveAs(saveDialog.FileName)
+                MessageBox.Show("Export Successful")
+            End If
+        Catch ex As System.Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            excel.Quit()
+            workbook = Nothing
+            excel = Nothing
+        End Try
+
+    End Sub
+   
+    Private Sub btnCetakPemesanan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCetakPemesanan.Click
+        ExportToExcel()
+    End Sub
+    Private Sub releaseObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
+    Private Sub DATAGRIDVIEW_TO_EXCEL(ByVal DGV As DataGridView)
+        Try
+            Dim DTB = New DataTable, RWS As Integer, CLS As Integer
+
+            For CLS = 0 To DGV.ColumnCount - 1 ' COLUMNS OF DTB
+                DTB.Columns.Add(DGV.Columns(CLS).Name.ToString)
+            Next
+
+            Dim DRW As DataRow
+
+            For RWS = 0 To DGV.Rows.Count - 1 ' FILL DTB WITH DATAGRIDVIEW
+                DRW = DTB.NewRow
+
+                For CLS = 0 To DGV.ColumnCount - 1
+                    Try
+                        DRW(DTB.Columns(CLS).ColumnName.ToString) = DGV.Rows(RWS).Cells(CLS).Value.ToString
+                    Catch ex As Exception
+
+                    End Try
+                Next
+
+                DTB.Rows.Add(DRW)
+            Next
+
+            DTB.AcceptChanges()
+
+            Dim DST As New DataSet
+            DST.Tables.Add(DTB)
+            Dim FLE As String = "" ' PATH AND FILE NAME WHERE THE XML WIL BE CREATED (EXEMPLE: C:\REPS\XML.xml)
+            DTB.WriteXml(FLE)
+            Dim EXL As String = "" ' PATH OF/ EXCEL.EXE IN YOUR MICROSOFT OFFICE
+            Shell(Chr(34) & EXL & Chr(34) & " " & Chr(34) & FLE & Chr(34), vbNormalFocus) ' OPEN XML WITH EXCEL
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
     End Sub
 End Class

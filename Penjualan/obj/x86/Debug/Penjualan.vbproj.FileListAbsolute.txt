@@ -16,3 +16,4 @@ C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjual
 C:\Users\Jajang Nurjaman\documents\visual studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormCariBarang.resources
 C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.DialogPO.resources
 C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormTerimaStok.resources
+C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.vbproj.ResolveComReference.cache

@@ -47,6 +47,10 @@ Partial Class FormTerimaStok
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.IdSupplierLabel = New System.Windows.Forms.Label()
+        Me.jmlDatang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
@@ -54,7 +58,11 @@ Partial Class FormTerimaStok
         Me.btnBayar = New System.Windows.Forms.Button()
         Me.btnCetakPemesanan = New System.Windows.Forms.Button()
         Me.btnPemesananBaru = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.IdPembelianDetilDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdPembelianMasterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JumlahBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GridPembelianBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
         Me.GridSupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -63,14 +71,6 @@ Partial Class FormTerimaStok
         Me.PembelianMasterTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PembelianMasterTableAdapter()
         Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
         Me.GridSupplierTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridSupplierTableAdapter()
-        Me.IdPembelianDetilDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdPembelianMasterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KodeBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaBarangDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JumlahBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jmlDatang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HargaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PembelianDetilBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PembelianDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter()
         Label6 = New System.Windows.Forms.Label()
@@ -184,10 +184,10 @@ Partial Class FormTerimaStok
         Me.PenjualanDetilDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PenjualanDetilDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPembelianDetilDataGridViewTextBoxColumn, Me.IdPembelianMasterDataGridViewTextBoxColumn, Me.KodeBarangDataGridViewTextBoxColumn, Me.NamaBarangDataGridViewTextBoxColumn, Me.JumlahBeliDataGridViewTextBoxColumn, Me.jmlDatang, Me.HargaDataGridViewTextBoxColumn, Me.SubTotal})
         Me.PenjualanDetilDataGridView.DataSource = Me.GridPembelianBindingSource
-        Me.PenjualanDetilDataGridView.Location = New System.Drawing.Point(6, 214)
+        Me.PenjualanDetilDataGridView.Location = New System.Drawing.Point(6, 236)
         Me.PenjualanDetilDataGridView.Name = "PenjualanDetilDataGridView"
         Me.PenjualanDetilDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.PenjualanDetilDataGridView.Size = New System.Drawing.Size(1024, 440)
+        Me.PenjualanDetilDataGridView.Size = New System.Drawing.Size(1024, 418)
         Me.PenjualanDetilDataGridView.TabIndex = 10
         '
         'Panel5
@@ -396,6 +396,40 @@ Partial Class FormTerimaStok
         Me.IdSupplierLabel.TabIndex = 4
         Me.IdSupplierLabel.Text = "-"
         '
+        'jmlDatang
+        '
+        Me.jmlDatang.HeaderText = "Jml Datang"
+        Me.jmlDatang.Name = "jmlDatang"
+        Me.jmlDatang.Width = 120
+        '
+        'HargaDataGridViewTextBoxColumn
+        '
+        Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga"
+        Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
+        Me.HargaDataGridViewTextBoxColumn.Width = 180
+        '
+        'SubTotal
+        '
+        Me.SubTotal.HeaderText = "Sub Total"
+        Me.SubTotal.Name = "SubTotal"
+        Me.SubTotal.ReadOnly = True
+        Me.SubTotal.Width = 180
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.Black
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(1036, 57)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "PEMBELIAN - STOK MASUK"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Black
@@ -514,21 +548,44 @@ Partial Class FormTerimaStok
         Me.btnPemesananBaru.Text = "Pemesanan Baru"
         Me.btnPemesananBaru.UseVisualStyleBackColor = False
         '
-        'Label2
+        'IdPembelianDetilDataGridViewTextBoxColumn
         '
-        Me.Label2.BackColor = System.Drawing.Color.Black
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label2.Image = Global.Penjualan.My.Resources.Resources.Move_Stock_64px
-        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1036, 57)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "PEMBELIAN - STOK MASUK"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.DataPropertyName = "idPembelianDetil"
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.HeaderText = "idPembelianDetil"
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.Name = "IdPembelianDetilDataGridViewTextBoxColumn"
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.Visible = False
+        '
+        'IdPembelianMasterDataGridViewTextBoxColumn
+        '
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.DataPropertyName = "idPembelianMaster"
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.HeaderText = "idPembelianMaster"
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.Name = "IdPembelianMasterDataGridViewTextBoxColumn"
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.Visible = False
+        '
+        'KodeBarangDataGridViewTextBoxColumn
+        '
+        Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
+        Me.KodeBarangDataGridViewTextBoxColumn.HeaderText = "Kode Barang"
+        Me.KodeBarangDataGridViewTextBoxColumn.Name = "KodeBarangDataGridViewTextBoxColumn"
+        Me.KodeBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.KodeBarangDataGridViewTextBoxColumn.Width = 180
+        '
+        'NamaBarangDataGridViewTextBoxColumn
+        '
+        Me.NamaBarangDataGridViewTextBoxColumn.DataPropertyName = "namaBarang"
+        Me.NamaBarangDataGridViewTextBoxColumn.HeaderText = "Nama Barang"
+        Me.NamaBarangDataGridViewTextBoxColumn.Name = "NamaBarangDataGridViewTextBoxColumn"
+        Me.NamaBarangDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NamaBarangDataGridViewTextBoxColumn.Width = 250
+        '
+        'JumlahBeliDataGridViewTextBoxColumn
+        '
+        Me.JumlahBeliDataGridViewTextBoxColumn.DataPropertyName = "jumlahBeli"
+        Me.JumlahBeliDataGridViewTextBoxColumn.HeaderText = "Jml Beli"
+        Me.JumlahBeliDataGridViewTextBoxColumn.Name = "JumlahBeliDataGridViewTextBoxColumn"
+        Me.JumlahBeliDataGridViewTextBoxColumn.ReadOnly = True
         '
         'GridPembelianBindingSource
         '
@@ -573,64 +630,6 @@ Partial Class FormTerimaStok
         'GridSupplierTableAdapter
         '
         Me.GridSupplierTableAdapter.ClearBeforeFill = True
-        '
-        'IdPembelianDetilDataGridViewTextBoxColumn
-        '
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.DataPropertyName = "idPembelianDetil"
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.HeaderText = "idPembelianDetil"
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.Name = "IdPembelianDetilDataGridViewTextBoxColumn"
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.Visible = False
-        '
-        'IdPembelianMasterDataGridViewTextBoxColumn
-        '
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.DataPropertyName = "idPembelianMaster"
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.HeaderText = "idPembelianMaster"
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.Name = "IdPembelianMasterDataGridViewTextBoxColumn"
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.Visible = False
-        '
-        'KodeBarangDataGridViewTextBoxColumn
-        '
-        Me.KodeBarangDataGridViewTextBoxColumn.DataPropertyName = "kodeBarang"
-        Me.KodeBarangDataGridViewTextBoxColumn.HeaderText = "Kode Barang"
-        Me.KodeBarangDataGridViewTextBoxColumn.Name = "KodeBarangDataGridViewTextBoxColumn"
-        Me.KodeBarangDataGridViewTextBoxColumn.ReadOnly = True
-        Me.KodeBarangDataGridViewTextBoxColumn.Width = 180
-        '
-        'NamaBarangDataGridViewTextBoxColumn
-        '
-        Me.NamaBarangDataGridViewTextBoxColumn.DataPropertyName = "namaBarang"
-        Me.NamaBarangDataGridViewTextBoxColumn.HeaderText = "Nama Barang"
-        Me.NamaBarangDataGridViewTextBoxColumn.Name = "NamaBarangDataGridViewTextBoxColumn"
-        Me.NamaBarangDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NamaBarangDataGridViewTextBoxColumn.Width = 250
-        '
-        'JumlahBeliDataGridViewTextBoxColumn
-        '
-        Me.JumlahBeliDataGridViewTextBoxColumn.DataPropertyName = "jumlahBeli"
-        Me.JumlahBeliDataGridViewTextBoxColumn.HeaderText = "Jml Beli"
-        Me.JumlahBeliDataGridViewTextBoxColumn.Name = "JumlahBeliDataGridViewTextBoxColumn"
-        Me.JumlahBeliDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'jmlDatang
-        '
-        Me.jmlDatang.HeaderText = "Jml Datang"
-        Me.jmlDatang.Name = "jmlDatang"
-        Me.jmlDatang.Width = 120
-        '
-        'HargaDataGridViewTextBoxColumn
-        '
-        Me.HargaDataGridViewTextBoxColumn.HeaderText = "Harga"
-        Me.HargaDataGridViewTextBoxColumn.Name = "HargaDataGridViewTextBoxColumn"
-        Me.HargaDataGridViewTextBoxColumn.Width = 180
-        '
-        'SubTotal
-        '
-        Me.SubTotal.HeaderText = "Sub Total"
-        Me.SubTotal.Name = "SubTotal"
-        Me.SubTotal.ReadOnly = True
-        Me.SubTotal.Width = 180
         '
         'PembelianDetilBindingSource
         '

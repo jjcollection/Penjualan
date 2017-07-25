@@ -205,7 +205,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property Move_Stock_32px() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Move Stock_32px", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Move_Stock_32px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -215,7 +215,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property Move_Stock_64px() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Move Stock_64px", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Move_Stock_64px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
