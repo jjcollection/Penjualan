@@ -22,6 +22,7 @@ Partial Class DialogBayar
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
@@ -39,8 +40,14 @@ Partial Class DialogBayar
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.PenjualanDataSet = New Penjualan.penjualanDataSet()
+        Me.PenjualanMasterBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PenjualanMasterTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PenjualanMasterTableAdapter()
+        Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PenjualanMasterBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -51,7 +58,7 @@ Partial Class DialogBayar
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(261, 225)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(261, 228)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
@@ -159,7 +166,7 @@ Partial Class DialogBayar
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(524, 291)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(524, 294)
         Me.ShapeContainer1.TabIndex = 3
         Me.ShapeContainer1.TabStop = False
         '
@@ -256,13 +263,40 @@ Partial Class DialogBayar
         Me.Label9.Text = "TERIMA KASIH"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'PenjualanDataSet
+        '
+        Me.PenjualanDataSet.DataSetName = "penjualanDataSet"
+        Me.PenjualanDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PenjualanMasterBindingSource
+        '
+        Me.PenjualanMasterBindingSource.DataMember = "PenjualanMaster"
+        Me.PenjualanMasterBindingSource.DataSource = Me.PenjualanDataSet
+        '
+        'PenjualanMasterTableAdapter
+        '
+        Me.PenjualanMasterTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BarangTableAdapter = Nothing
+        Me.TableAdapterManager.JenisTableAdapter = Nothing
+        Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
+        Me.TableAdapterManager.PembelianMasterTableAdapter = Nothing
+        Me.TableAdapterManager.PengaturanTableAdapter = Nothing
+        Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
+        Me.TableAdapterManager.PenjualanMasterTableAdapter = Me.PenjualanMasterTableAdapter
+        Me.TableAdapterManager.SupplierTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Penjualan.penjualanDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'DialogBayar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(524, 291)
+        Me.ClientSize = New System.Drawing.Size(524, 294)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
@@ -284,9 +318,11 @@ Partial Class DialogBayar
         Me.Opacity = 0.98R
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "DialogBayar"
+        Me.Text = "Pembayaran"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PenjualanMasterBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -308,5 +344,9 @@ Partial Class DialogBayar
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents PenjualanDataSet As Penjualan.penjualanDataSet
+    Friend WithEvents PenjualanMasterBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents PenjualanMasterTableAdapter As Penjualan.penjualanDataSetTableAdapters.PenjualanMasterTableAdapter
+    Friend WithEvents TableAdapterManager As Penjualan.penjualanDataSetTableAdapters.TableAdapterManager
 
 End Class

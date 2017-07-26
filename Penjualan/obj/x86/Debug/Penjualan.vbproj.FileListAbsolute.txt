@@ -23,3 +23,4 @@ C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjual
 C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\RdlCompile.compiled
 C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.DialogPenjualan.resources
 C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.DialogBayar.resources
+C:\Users\Jajang Nurjaman\Documents\Visual Studio 2010\Projects\Penjualan\Penjualan\obj\x86\Debug\Penjualan.FormReportKwitansi.resources
