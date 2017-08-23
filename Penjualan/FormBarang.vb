@@ -33,7 +33,7 @@
         Try
             BarangTableAdapter.InsertQuery(KodeBarangTextBox.Text, IdJenisComboBox.SelectedValue, NamaBarangTextBox.Text, HargaTextBox.Text, SatuanComboBox.Text)
             MsgBox("data telah disimpan.", MsgBoxStyle.Information, "Informasi")
-            BarangTableAdapter.Fill(PenjualanDataSet.Barang)
+            Me.GridBarangTableAdapter.Fill(Me.PenjualanDataSet.gridBarang)
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -111,7 +111,7 @@
         Try
             BarangTableAdapter.UpdateQuery(KodeBarangTextBox.Text, IdJenisComboBox.SelectedValue, NamaBarangTextBox.Text, HargaTextBox.Text, SatuanComboBox.Text, KodeBarangTextBox.Text)
             MsgBox("data telah diubah", MsgBoxStyle.Information, "Berhasil")
-            BarangTableAdapter.Fill(PenjualanDataSet.Barang)
+            Me.GridBarangTableAdapter.Fill(Me.PenjualanDataSet.gridBarang)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -121,7 +121,7 @@
         Try
             BarangTableAdapter.DeleteQuery(KodeBarangTextBox.Text)
             MsgBox("data telah dihapus", MsgBoxStyle.Information, "Berhasil")
-            BarangTableAdapter.Fill(PenjualanDataSet.Barang)
+            Me.GridBarangTableAdapter.Fill(Me.PenjualanDataSet.gridBarang)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

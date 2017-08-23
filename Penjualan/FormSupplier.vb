@@ -32,4 +32,44 @@
     Private Sub btnKeluar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKeluar.Click
         Me.Close()
     End Sub
+
+    Private Sub btnSimpan_Click(sender As System.Object, e As System.EventArgs) Handles btnSimpan.Click
+        Try
+            SupplierTableAdapter.InsertQuery(txtNama.Text, txtTlp.Text, txtAlamat.Text)
+            MsgBox("data telah disimpan", MsgBoxStyle.Information, "Berhasil")
+            Me.SupplierTableAdapter.Fill(Me.PenjualanDataSet.Supplier)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs)
+
+    End Sub
+
+    Private Sub btnUbah_Click(sender As System.Object, e As System.EventArgs) Handles btnUbah.Click
+        Try
+            SupplierTableAdapter.UpdateQuery(txtNama.Text, txtTlp.Text, txtAlamat.Text, BarangDataGridView.SelectedCells(0).Value)
+            MsgBox("data telah diubah", MsgBoxStyle.Information, "Berhasil")
+            Me.SupplierTableAdapter.Fill(Me.PenjualanDataSet.Supplier)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnHapus_Click(sender As System.Object, e As System.EventArgs) Handles btnHapus.Click
+        Try
+            SupplierTableAdapter.DeleteQuery(BarangDataGridView.SelectedCells(0).Value)
+            MsgBox("data telah dihapus", MsgBoxStyle.Information, "Berhasil")
+            Me.SupplierTableAdapter.Fill(Me.PenjualanDataSet.Supplier)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BarangDataGridView_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles BarangDataGridView.CellClick
+        txtNama.Text = BarangDataGridView.SelectedCells(1).Value
+        txtTlp.Text = BarangDataGridView.SelectedCells(2).Value
+        txtAlamat.Text = BarangDataGridView.SelectedCells(3).Value
+    End Sub
 End Class

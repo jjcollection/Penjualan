@@ -46,6 +46,8 @@ Partial Class FormBarang
         Me.btnTambah = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SatuanComboBox = New System.Windows.Forms.ComboBox()
         Me.IdJenisComboBox = New System.Windows.Forms.ComboBox()
         Me.JenisBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -68,8 +70,6 @@ Partial Class FormBarang
         Me.TableAdapterManager = New Penjualan.penjualanDataSetTableAdapters.TableAdapterManager()
         Me.JenisTableAdapter = New Penjualan.penjualanDataSetTableAdapters.JenisTableAdapter()
         Me.GridBarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.gridBarangTableAdapter()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         KodeBarangLabel = New System.Windows.Forms.Label()
         IdJenisLabel = New System.Windows.Forms.Label()
         NamaBarangLabel = New System.Windows.Forms.Label()
@@ -85,13 +85,13 @@ Partial Class FormBarang
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.JenisBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridBarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'KodeBarangLabel
@@ -410,6 +410,36 @@ Partial Class FormBarang
         Me.Panel6.Size = New System.Drawing.Size(860, 208)
         Me.Panel6.TabIndex = 11
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(459, 16)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(386, 87)
+        Me.GroupBox1.TabIndex = 17
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Pencarian"
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(107, 28)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(172, 30)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Cari"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'SatuanComboBox
         '
         Me.SatuanComboBox.FormattingEnabled = True
@@ -462,6 +492,7 @@ Partial Class FormBarang
         Me.HargaTextBox.Name = "HargaTextBox"
         Me.HargaTextBox.Size = New System.Drawing.Size(298, 29)
         Me.HargaTextBox.TabIndex = 7
+        Me.HargaTextBox.Text = "0"
         '
         'Panel5
         '
@@ -579,36 +610,6 @@ Partial Class FormBarang
         '
         Me.GridBarangTableAdapter.ClearBeforeFill = True
         '
-        'Button2
-        '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Image = Global.Penjualan.My.Resources.Resources.Search_16px
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(107, 28)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(172, 30)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Cari"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(459, 16)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(386, 87)
-        Me.GroupBox1.TabIndex = 17
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Pencarian"
-        '
         'FormBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 21.0!)
@@ -629,13 +630,13 @@ Partial Class FormBarang
         Me.Panel4.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
         CType(Me.JenisBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PenjualanDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         CType(Me.BarangDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridBarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
