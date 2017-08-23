@@ -143,6 +143,12 @@
     <Compile Include="FormPembelian.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormPembelianFilter.Designer.vb">
+      <DependentUpon>FormPembelianFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPembelianFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormReportBarang.Designer.vb">
       <DependentUpon>FormReportBarang.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,18 @@
       <DependentUpon>FormReportKwitansi.vb</DependentUpon>
     </Compile>
     <Compile Include="FormReportKwitansi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportPemesanan.Designer.vb">
+      <DependentUpon>FormReportPemesanan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportPemesanan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportPenjualan.Designer.vb">
+      <DependentUpon>FormReportPenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportPenjualan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSupplier.Designer.vb">
@@ -222,11 +240,20 @@
     <EmbeddedResource Include="FormPembelian.resx">
       <DependentUpon>FormPembelian.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPembelianFilter.resx">
+      <DependentUpon>FormPembelianFilter.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReportBarang.resx">
       <DependentUpon>FormReportBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportKwitansi.resx">
       <DependentUpon>FormReportKwitansi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportPemesanan.resx">
+      <DependentUpon>FormReportPemesanan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportPenjualan.resx">
+      <DependentUpon>FormReportPenjualan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier.resx">
       <DependentUpon>FormSupplier.vb</DependentUpon>
@@ -244,7 +271,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportBarang.rdlc" />
+    <EmbeddedResource Include="ReportBeliFilter.rdlc" />
+    <EmbeddedResource Include="ReportJual.rdlc" />
     <EmbeddedResource Include="ReportKwitansi.rdlc" />
+    <EmbeddedResource Include="ReportPembelian.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -13,25 +13,27 @@ Public Class FormPembelian
         digit = Microsoft.VisualBasic.Right(tahun, 2)
         tbl = Me.PembelianMasterTableAdapter.GetDataByPembelianMasterDesc
         If tbl.Rows.Count = 0 Then
-            NoTransaksiTextBox.Text = tgl + digit + "0001"
+            NoTransaksiTextBox.Text = tgl + digit + "00001"
         Else
             With tbl.Rows(0)
                 NoTransaksiTextBox.Text = .Item("idPembelianMaster")
             End With
-            NoTransaksiTextBox.Text = Val(Microsoft.VisualBasic.Mid(NoTransaksiTextBox.Text, 5, 4)) + 1
+            NoTransaksiTextBox.Text = Val(Microsoft.VisualBasic.Mid(NoTransaksiTextBox.Text, 5, 5)) + 1
             If Len(NoTransaksiTextBox.Text) = 1 Then
-                NoTransaksiTextBox.Text = tgl + digit + "000" & NoTransaksiTextBox.Text & ""
+                NoTransaksiTextBox.Text = tgl + digit + "0000" & NoTransaksiTextBox.Text & ""
             ElseIf Len(NoTransaksiTextBox.Text) = 2 Then
-                NoTransaksiTextBox.Text = tgl + digit + "00" & NoTransaksiTextBox.Text & ""
+                NoTransaksiTextBox.Text = tgl + digit + "000" & NoTransaksiTextBox.Text & ""
             ElseIf Len(NoTransaksiTextBox.Text) = 3 Then
-                NoTransaksiTextBox.Text = tgl + digit + "0" & NoTransaksiTextBox.Text & ""
+                NoTransaksiTextBox.Text = tgl + digit + "00" & NoTransaksiTextBox.Text & ""
             ElseIf Len(NoTransaksiTextBox.Text) = 4 Then
+                NoTransaksiTextBox.Text = tgl + digit + "0" & NoTransaksiTextBox.Text & ""
+            ElseIf Len(NoTransaksiTextBox.Text) = 5 Then
                 NoTransaksiTextBox.Text = tgl + digit + NoTransaksiTextBox.Text
             End If
 
         End If
     End Sub
-
+  
     Private Sub btnPemesananBaru_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPemesananBaru.Click
 
         kode_otomatis()
@@ -195,51 +197,51 @@ Public Class FormPembelian
         Dim workbook As Microsoft.Office.Interop.Excel._Workbook = excel.Workbooks.Add(Type.Missing)
         Dim worksheet As Microsoft.Office.Interop.Excel._Worksheet = Nothing
 
-        Try
+        'Try
 
-            worksheet = workbook.ActiveSheet
+        worksheet = workbook.ActiveSheet
 
-            worksheet.Name = "ExportedFromDatGrid"
+        worksheet.Name = "ExportedFromDatGrid"
 
-            Dim cellRowIndex As Integer = 1
-            Dim cellColumnIndex As Integer = 1
+        Dim cellRowIndex As Integer = 1
+        Dim cellColumnIndex As Integer = 1
 
-            'Loop through each row and read value from each column.
-            For i As Integer = 0 To (PenjualanDetilDataGridView.Rows.Count + 2) - 2
-                For j As Integer = 0 To PenjualanDetilDataGridView.Columns.Count - 1
-                    ' Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
-                    If cellRowIndex = 1 Then
-                        worksheet.Cells(cellRowIndex, cellColumnIndex) = PenjualanDetilDataGridView.Columns(j).HeaderText
-                    Else
-                        worksheet.Cells(cellRowIndex, cellColumnIndex) = PenjualanDetilDataGridView.Rows(i).Cells(j).Value.ToString()
-                    End If
-                    cellColumnIndex += 1
-                Next
-                cellColumnIndex = 1
-                cellRowIndex += 1
+        'Loop through each row and read value from each column.
+        For i As Integer = 0 To (PenjualanDetilDataGridView.Rows.Count + 1) - 1
+            For j As Integer = 0 To PenjualanDetilDataGridView.Columns.Count - 1
+                ' Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
+                If cellRowIndex = 1 Then
+                    worksheet.Cells(cellRowIndex, cellColumnIndex) = PenjualanDetilDataGridView.Columns(j).HeaderText
+                Else
+                    worksheet.Cells(cellRowIndex, cellColumnIndex) = PenjualanDetilDataGridView.Rows(i).Cells(j).Value.ToString()
+                End If
+                cellColumnIndex += 1
             Next
+            cellColumnIndex = 1
+            cellRowIndex += 1
+        Next
 
-            'Getting the location and file name of the excel to save from user.
-            Dim saveDialog As New SaveFileDialog()
-            saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*"
-            saveDialog.FilterIndex = 2
+        'Getting the location and file name of the excel to save from user.
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*"
+        saveDialog.FilterIndex = 2
 
-            If saveDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-                workbook.SaveAs(saveDialog.FileName)
-                MessageBox.Show("Export Successful")
-            End If
-        Catch ex As System.Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            excel.Quit()
-            workbook = Nothing
-            excel = Nothing
-        End Try
+        If saveDialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            workbook.SaveAs(saveDialog.FileName)
+            MessageBox.Show("Export Successful")
+        End If
+        'Catch ex As System.Exception
+        '    MessageBox.Show(ex.Message)
+        'Finally
+        excel.Quit()
+        workbook = Nothing
+        excel = Nothing
+        'End Try
 
     End Sub
    
     Private Sub btnCetakPemesanan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCetakPemesanan.Click
-        ExportToExcel()
+        FormReportPemesanan.ShowDialog()
     End Sub
     Private Sub releaseObject(ByVal obj As Object)
         Try

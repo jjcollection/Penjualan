@@ -65,13 +65,6 @@ Partial Class FormPembelian
         Me.btnPemesananBaru = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PenjualanDetilDataGridView = New System.Windows.Forms.DataGridView()
-        Me.IdPembelianDetilDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdPembelianMasterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KodeBarangDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamaBarangDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JumlahBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HargaDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubTotalBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GridPembelianBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GridBarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PembelianMasterBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -84,6 +77,13 @@ Partial Class FormPembelian
         Me.PembelianDetilTableAdapter = New Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter()
         Me.BarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BarangTableAdapter = New Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter()
+        Me.IdPembelianDetilDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdPembelianMasterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KodeBarangDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NamaBarangDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JumlahBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HargaDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubTotalBeliDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         NoTransaksiLabel = New System.Windows.Forms.Label()
         Label6 = New System.Windows.Forms.Label()
         Label5 = New System.Windows.Forms.Label()
@@ -370,7 +370,7 @@ Partial Class FormPembelian
         'Panel3
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.Label2)
@@ -398,7 +398,7 @@ Partial Class FormPembelian
         'Panel5
         '
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel5.Controls.Add(Me.Button2)
         Me.Panel5.Controls.Add(Me.IdSupplierComboBox)
@@ -462,7 +462,7 @@ Partial Class FormPembelian
         'txtHarga
         '
         Me.txtHarga.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtHarga.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(43, Byte), Integer))
         Me.txtHarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtHarga.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -476,7 +476,7 @@ Partial Class FormPembelian
         'txtNama
         '
         Me.txtNama.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtNama.BackColor = System.Drawing.Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(43, Byte), Integer))
         Me.txtNama.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNama.ForeColor = System.Drawing.Color.White
@@ -515,7 +515,7 @@ Partial Class FormPembelian
         'Panel1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -637,8 +637,8 @@ Partial Class FormPembelian
         'Panel4
         '
         Me.Panel4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BackColor = System.Drawing.Color.WhiteSmoke
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.PenjualanDetilDataGridView)
@@ -656,8 +656,8 @@ Partial Class FormPembelian
         Me.PenjualanDetilDataGridView.AllowUserToAddRows = False
         Me.PenjualanDetilDataGridView.AllowUserToDeleteRows = False
         Me.PenjualanDetilDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PenjualanDetilDataGridView.AutoGenerateColumns = False
         Me.PenjualanDetilDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PenjualanDetilDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdPembelianDetilDataGridViewTextBoxColumn, Me.IdPembelianMasterDataGridViewTextBoxColumn, Me.KodeBarangDataGridViewTextBoxColumn1, Me.NamaBarangDataGridViewTextBoxColumn1, Me.JumlahBeliDataGridViewTextBoxColumn, Me.HargaDataGridViewTextBoxColumn1, Me.SubTotalBeliDataGridViewTextBoxColumn})
@@ -668,58 +668,6 @@ Partial Class FormPembelian
         Me.PenjualanDetilDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.PenjualanDetilDataGridView.Size = New System.Drawing.Size(1014, 464)
         Me.PenjualanDetilDataGridView.TabIndex = 10
-        '
-        'IdPembelianDetilDataGridViewTextBoxColumn
-        '
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.DataPropertyName = "idPembelianDetil"
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.HeaderText = "idPembelianDetil"
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.Name = "IdPembelianDetilDataGridViewTextBoxColumn"
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdPembelianDetilDataGridViewTextBoxColumn.Visible = False
-        '
-        'IdPembelianMasterDataGridViewTextBoxColumn
-        '
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.DataPropertyName = "idPembelianMaster"
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.HeaderText = "idPembelianMaster"
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.Name = "IdPembelianMasterDataGridViewTextBoxColumn"
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdPembelianMasterDataGridViewTextBoxColumn.Visible = False
-        '
-        'KodeBarangDataGridViewTextBoxColumn1
-        '
-        Me.KodeBarangDataGridViewTextBoxColumn1.DataPropertyName = "kodeBarang"
-        Me.KodeBarangDataGridViewTextBoxColumn1.HeaderText = "Kode "
-        Me.KodeBarangDataGridViewTextBoxColumn1.Name = "KodeBarangDataGridViewTextBoxColumn1"
-        Me.KodeBarangDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'NamaBarangDataGridViewTextBoxColumn1
-        '
-        Me.NamaBarangDataGridViewTextBoxColumn1.DataPropertyName = "namaBarang"
-        Me.NamaBarangDataGridViewTextBoxColumn1.HeaderText = "Nama Barang"
-        Me.NamaBarangDataGridViewTextBoxColumn1.Name = "NamaBarangDataGridViewTextBoxColumn1"
-        Me.NamaBarangDataGridViewTextBoxColumn1.ReadOnly = True
-        Me.NamaBarangDataGridViewTextBoxColumn1.Width = 350
-        '
-        'JumlahBeliDataGridViewTextBoxColumn
-        '
-        Me.JumlahBeliDataGridViewTextBoxColumn.DataPropertyName = "jumlahBeli"
-        Me.JumlahBeliDataGridViewTextBoxColumn.HeaderText = "Jumlah "
-        Me.JumlahBeliDataGridViewTextBoxColumn.Name = "JumlahBeliDataGridViewTextBoxColumn"
-        Me.JumlahBeliDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'HargaDataGridViewTextBoxColumn1
-        '
-        Me.HargaDataGridViewTextBoxColumn1.DataPropertyName = "harga"
-        Me.HargaDataGridViewTextBoxColumn1.HeaderText = "Harga"
-        Me.HargaDataGridViewTextBoxColumn1.Name = "HargaDataGridViewTextBoxColumn1"
-        Me.HargaDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'SubTotalBeliDataGridViewTextBoxColumn
-        '
-        Me.SubTotalBeliDataGridViewTextBoxColumn.DataPropertyName = "subTotalBeli"
-        Me.SubTotalBeliDataGridViewTextBoxColumn.HeaderText = "Sub Total"
-        Me.SubTotalBeliDataGridViewTextBoxColumn.Name = "SubTotalBeliDataGridViewTextBoxColumn"
-        Me.SubTotalBeliDataGridViewTextBoxColumn.ReadOnly = True
         '
         'GridPembelianBindingSource
         '
@@ -747,6 +695,7 @@ Partial Class FormPembelian
         Me.TableAdapterManager.JenisTableAdapter = Nothing
         Me.TableAdapterManager.PembelianDetilTableAdapter = Nothing
         Me.TableAdapterManager.PembelianMasterTableAdapter = Me.PembelianMasterTableAdapter
+        Me.TableAdapterManager.PengaturanTableAdapter = Nothing
         Me.TableAdapterManager.PenjualanDetilTableAdapter = Nothing
         Me.TableAdapterManager.PenjualanMasterTableAdapter = Nothing
         Me.TableAdapterManager.SupplierTableAdapter = Nothing
@@ -781,6 +730,59 @@ Partial Class FormPembelian
         'BarangTableAdapter
         '
         Me.BarangTableAdapter.ClearBeforeFill = True
+        '
+        'IdPembelianDetilDataGridViewTextBoxColumn
+        '
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.DataPropertyName = "idPembelianDetil"
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.HeaderText = "idPembelianDetil"
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.Name = "IdPembelianDetilDataGridViewTextBoxColumn"
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdPembelianDetilDataGridViewTextBoxColumn.Visible = False
+        '
+        'IdPembelianMasterDataGridViewTextBoxColumn
+        '
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.DataPropertyName = "idPembelianMaster"
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.HeaderText = "idPembelianMaster"
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.Name = "IdPembelianMasterDataGridViewTextBoxColumn"
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdPembelianMasterDataGridViewTextBoxColumn.Visible = False
+        '
+        'KodeBarangDataGridViewTextBoxColumn1
+        '
+        Me.KodeBarangDataGridViewTextBoxColumn1.DataPropertyName = "kodeBarang"
+        Me.KodeBarangDataGridViewTextBoxColumn1.HeaderText = "Kode "
+        Me.KodeBarangDataGridViewTextBoxColumn1.Name = "KodeBarangDataGridViewTextBoxColumn1"
+        Me.KodeBarangDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.KodeBarangDataGridViewTextBoxColumn1.Width = 200
+        '
+        'NamaBarangDataGridViewTextBoxColumn1
+        '
+        Me.NamaBarangDataGridViewTextBoxColumn1.DataPropertyName = "namaBarang"
+        Me.NamaBarangDataGridViewTextBoxColumn1.HeaderText = "Nama Barang"
+        Me.NamaBarangDataGridViewTextBoxColumn1.Name = "NamaBarangDataGridViewTextBoxColumn1"
+        Me.NamaBarangDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.NamaBarangDataGridViewTextBoxColumn1.Width = 350
+        '
+        'JumlahBeliDataGridViewTextBoxColumn
+        '
+        Me.JumlahBeliDataGridViewTextBoxColumn.DataPropertyName = "jumlahBeli"
+        Me.JumlahBeliDataGridViewTextBoxColumn.HeaderText = "Jumlah "
+        Me.JumlahBeliDataGridViewTextBoxColumn.Name = "JumlahBeliDataGridViewTextBoxColumn"
+        Me.JumlahBeliDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HargaDataGridViewTextBoxColumn1
+        '
+        Me.HargaDataGridViewTextBoxColumn1.DataPropertyName = "harga"
+        Me.HargaDataGridViewTextBoxColumn1.HeaderText = "Harga"
+        Me.HargaDataGridViewTextBoxColumn1.Name = "HargaDataGridViewTextBoxColumn1"
+        Me.HargaDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'SubTotalBeliDataGridViewTextBoxColumn
+        '
+        Me.SubTotalBeliDataGridViewTextBoxColumn.DataPropertyName = "subTotalBeli"
+        Me.SubTotalBeliDataGridViewTextBoxColumn.HeaderText = "Sub Total"
+        Me.SubTotalBeliDataGridViewTextBoxColumn.Name = "SubTotalBeliDataGridViewTextBoxColumn"
+        Me.SubTotalBeliDataGridViewTextBoxColumn.ReadOnly = True
         '
         'FormPembelian
         '
@@ -854,6 +856,10 @@ Partial Class FormPembelian
     Friend WithEvents PembelianDetilTableAdapter As Penjualan.penjualanDataSetTableAdapters.PembelianDetilTableAdapter
     Friend WithEvents BarangBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents BarangTableAdapter As Penjualan.penjualanDataSetTableAdapters.BarangTableAdapter
+    Friend WithEvents txtHarga As System.Windows.Forms.TextBox
+    Friend WithEvents txtNama As System.Windows.Forms.TextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents IdPembelianDetilDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdPembelianMasterDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents KodeBarangDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -861,8 +867,4 @@ Partial Class FormPembelian
     Friend WithEvents JumlahBeliDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents HargaDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SubTotalBeliDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txtHarga As System.Windows.Forms.TextBox
-    Friend WithEvents txtNama As System.Windows.Forms.TextBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

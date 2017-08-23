@@ -8,3 +8,9 @@
     End Class
 
 End Class
+
+Namespace penjualanDataSetTableAdapters
+    
+    Partial Public Class gridPenjualanTableAdapter
+    End Class
+End Namespace

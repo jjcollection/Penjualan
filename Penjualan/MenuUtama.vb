@@ -29,4 +29,12 @@ Public Class MenuUtama
     Private Sub btnTerima_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTerima.Click
         FormTerimaStok.Show()
     End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        FormReportPenjualan.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        FormPembelianFilter.Show()
+    End Sub
 End Class

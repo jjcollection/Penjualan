@@ -9,19 +9,21 @@
         digit = Microsoft.VisualBasic.Right(tahun, 2)
         tbl = Me.PenjualanMasterTableAdapter.GetDataByDesc
         If tbl.Rows.Count = 0 Then
-            NoTransaksiTextBox.Text = tgl + digit + "0001"
+            NoTransaksiTextBox.Text = tgl + digit + "00001"
         Else
             With tbl.Rows(0)
                 NoTransaksiTextBox.Text = .Item("noTransaksi")
             End With
-            NoTransaksiTextBox.Text = Val(Microsoft.VisualBasic.Mid(NoTransaksiTextBox.Text, 5, 4)) + 1
+            NoTransaksiTextBox.Text = Val(Microsoft.VisualBasic.Mid(NoTransaksiTextBox.Text, 5, 5)) + 1
             If Len(NoTransaksiTextBox.Text) = 1 Then
-                NoTransaksiTextBox.Text = tgl + digit + "000" & NoTransaksiTextBox.Text & ""
+                NoTransaksiTextBox.Text = tgl + digit + "0000" & NoTransaksiTextBox.Text & ""
             ElseIf Len(NoTransaksiTextBox.Text) = 2 Then
-                NoTransaksiTextBox.Text = tgl + digit + "00" & NoTransaksiTextBox.Text & ""
+                NoTransaksiTextBox.Text = tgl + digit + "000" & NoTransaksiTextBox.Text & ""
             ElseIf Len(NoTransaksiTextBox.Text) = 3 Then
-                NoTransaksiTextBox.Text = tgl + digit + "0" & NoTransaksiTextBox.Text & ""
+                NoTransaksiTextBox.Text = tgl + digit + "00" & NoTransaksiTextBox.Text & ""
             ElseIf Len(NoTransaksiTextBox.Text) = 4 Then
+                NoTransaksiTextBox.Text = tgl + digit + "0" & NoTransaksiTextBox.Text & ""
+            ElseIf Len(NoTransaksiTextBox.Text) = 5 Then
                 NoTransaksiTextBox.Text = tgl + digit + NoTransaksiTextBox.Text
             End If
 
@@ -52,14 +54,38 @@
     Private Sub KodeBarangTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles KodeBarangTextBox.KeyDown
         If (e.KeyCode = Keys.Enter) Then
             Dim dt = BarangTableAdapter.GetDataByKode(KodeBarangTextBox.Text)
+            Dim dtcelada = BarangTableAdapter.GetDataByCekAda(KodeBarangTextBox.Text)
             Dim br = BarangTableAdapter.FillByKode(PenjualanDataSet.Barang, KodeBarangTextBox.Text)
-            If dt.Rows.Count = 0 Then
-                MsgBox("Barang tidak ditemukan", MsgBoxStyle.Information, "Informasi")
+            If dtcelada.Rows.Count = 0 Then
+                MsgBox("Kode Barang tidak ditemukan", MsgBoxStyle.Critical, "Informasi")
+            ElseIf dt.Rows.Count = 0 Then
+                MsgBox("Stok Tidak Cukup", MsgBoxStyle.Information, "Informasi")
             Else
                 kodebr = dt.Rows(0).Item("namaBarang")
                 hargabr = dt.Rows(0).Item("harga")
                 LabelInfo.Text = dt.Rows(0).Item("namaBarang") & "#" & Format(hargabr, "currency")
-                JumlahBeliTextBox.Focus()
+                Dim brcek = BarangTableAdapter.GetDataByKode(KodeBarangTextBox.Text)
+                Dim jmlstok = brcek.Rows(0).Item("stok")
+                If (Val(jmlstok) < Val(JumlahBeliTextBox.Text)) Then
+                    MsgBox("Stok tidak cukup")
+                Else
+                    PenjualanDetilTableAdapter.InsertQuery(NoTransaksiTextBox.Text, KodeBarangTextBox.Text.ToUpper, JumlahBeliTextBox.Text, Val(JumlahBeliTextBox.Text) * hargabr)
+                    GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
+
+                    Dim totalbelanja = PenjualanDetilTableAdapter.subtotal(NoTransaksiTextBox.Text)
+                    Dim totalItem = PenjualanDetilTableAdapter.jmlitem(NoTransaksiTextBox.Text)
+
+                    lbTotal.Text = Format(totalbelanja, "Currency")
+                    lbitem.Text = "Item :" & totalItem
+                    lbTanggal.Text = Date.Today.Date
+                    PenjualanMasterTableAdapter.UpdateTotal(totalItem, totalbelanja, NoTransaksiTextBox.Text)
+                    BarangTableAdapter.UpdateKurangiStok(KodeBarangTextBox.Text, JumlahBeliTextBox.Text, KodeBarangTextBox.Text)
+                    KodeBarangTextBox.Focus()
+                    KodeBarangTextBox.Text = ""
+                    JumlahBeliTextBox.Text = "1"
+                    btnenable()
+                End If
+
             End If
         End If
 
@@ -74,29 +100,7 @@
         End If
     End Sub
     Private Sub JumlahBeliTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles JumlahBeliTextBox.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Dim br = BarangTableAdapter.GetDataByKode(KodeBarangTextBox.Text)
-            Dim jmlstok = br.Rows(0).Item("stok")
-            If (Val(jmlstok) < Val(JumlahBeliTextBox.Text)) Then
-                MsgBox("Stok tidak cukup")
-            Else
-                PenjualanDetilTableAdapter.InsertQuery(NoTransaksiTextBox.Text, KodeBarangTextBox.Text.ToUpper, JumlahBeliTextBox.Text, Val(JumlahBeliTextBox.Text) * hargabr)
-                GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
-
-                Dim totalbelanja = PenjualanDetilTableAdapter.subtotal(NoTransaksiTextBox.Text)
-                Dim totalItem = PenjualanDetilTableAdapter.jmlitem(NoTransaksiTextBox.Text)
-
-                lbTotal.Text = Format(totalbelanja, "Currency")
-                lbitem.Text = "Item :" & totalItem
-                lbTanggal.Text = Date.Today.Date
-                PenjualanMasterTableAdapter.UpdateTotal(totalItem, totalbelanja, NoTransaksiTextBox.Text)
-                BarangTableAdapter.UpdateKurangiStok(KodeBarangTextBox.Text, JumlahBeliTextBox.Text, KodeBarangTextBox.Text)
-                KodeBarangTextBox.Focus()
-                KodeBarangTextBox.Text = ""
-                JumlahBeliTextBox.Text = "1"
-                btnenable()
-            End If
-        End If
+       
     End Sub
 
     Private Sub FormJual_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -109,6 +113,22 @@
             btnBayar.Enabled = True
         End If
         ambiltransaksi(NoTransaksiTextBox.Text)
+
+        Try
+
+            kode_otomatis()
+            PenjualanMasterTableAdapter.InsertQuery(NoTransaksiTextBox.Text, Date.Now, 0, 0)
+            GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
+            KodeBarangTextBox.Focus()
+            JumlahBeliTextBox.Text = "1"
+            lbitem.Text = "Item : 0"
+            lbTotal.Text = "0"
+            LabelInfo.Text = "-"
+            KodeBarangTextBox.Text = ""
+            btnenable()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub btnHapus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnHapus.Click
@@ -179,9 +199,12 @@
     End Sub
     Private Sub NoTransaksiTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles NoTransaksiTextBox.KeyDown
         If e.KeyCode = Keys.Enter Then
-            'GridPenjualanTableAdapter .GetDataByTransaksi (NoTransaksiTextBox .Text )
             GridPenjualanTableAdapter.FillByTransaksi(PenjualanDataSet.gridPenjualan, NoTransaksiTextBox.Text)
         End If
+
+
+       
+
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -189,8 +212,33 @@
     End Sub
 
     Private Sub btnBayar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBayar.Click
-        DialogBayar.lbTotal.Text = lbTotal.Text
+        ' DialogBayar.lbTotal.Text = lbTotal.Text
         DialogBayar.fokuskan()
         DialogBayar.ShowDialog()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+        FormCariBarang.ShowDialog()
+    End Sub
+
+    Private Sub FormJual_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.F12 Then
+            DialogBayar.ShowDialog()
+        ElseIf e.KeyCode = Keys.F1 Then
+            KodeBarangTextBox.Text = ""
+            KodeBarangTextBox.Focus()
+        ElseIf e.KeyCode = Keys.F3 Then
+            Button3.PerformClick()
+        ElseIf e.KeyCode = Keys.F4 Then
+            Me.Close()
+        ElseIf e.KeyCode = Keys.F2 Then
+            JumlahBeliTextBox.Focus()
+        ElseIf e.KeyCode = Keys.F5 Then
+            btnTransaksiBaru.PerformClick()
+        End If
     End Sub
 End Class
