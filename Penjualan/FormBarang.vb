@@ -130,4 +130,17 @@
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
         FormCariBarang.ShowDialog()
     End Sub
+
+    Private Sub BarangDataGridView_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles BarangDataGridView.CellClick
+        Try
+            KodeBarangTextBox.Text = BarangDataGridView.SelectedCells(0).Value
+            IdJenisComboBox.SelectedValue = BarangDataGridView.SelectedCells(1).Value
+            NamaBarangTextBox.Text = BarangDataGridView.SelectedCells(2).Value
+            HargaTextBox.Text = BarangDataGridView.SelectedCells(3).Value
+            SatuanComboBox.Text = BarangDataGridView.SelectedCells(4).Value
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class
