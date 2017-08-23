@@ -21,7 +21,7 @@
 
     End Sub
 
-    Private Sub IdJenisComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IdJenisComboBox.SelectedIndexChanged, cbbKriteria.SelectedIndexChanged
+    Private Sub IdJenisComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IdJenisComboBox.SelectedIndexChanged
 
     End Sub
 
@@ -36,7 +36,7 @@
             BarangTableAdapter.Fill(PenjualanDataSet.Barang)
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -105,5 +105,29 @@
         Finally
             GC.Collect()
         End Try
+    End Sub
+
+    Private Sub btnUbah_Click(sender As System.Object, e As System.EventArgs) Handles btnUbah.Click
+        Try
+            BarangTableAdapter.UpdateQuery(KodeBarangTextBox.Text, IdJenisComboBox.SelectedValue, NamaBarangTextBox.Text, HargaTextBox.Text, SatuanComboBox.Text, KodeBarangTextBox.Text)
+            MsgBox("data telah diubah", MsgBoxStyle.Information, "Berhasil")
+            BarangTableAdapter.Fill(PenjualanDataSet.Barang)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnHapus_Click(sender As System.Object, e As System.EventArgs) Handles btnHapus.Click
+        Try
+            BarangTableAdapter.DeleteQuery(KodeBarangTextBox.Text)
+            MsgBox("data telah dihapus", MsgBoxStyle.Information, "Berhasil")
+            BarangTableAdapter.Fill(PenjualanDataSet.Barang)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+        FormCariBarang.ShowDialog()
     End Sub
 End Class
